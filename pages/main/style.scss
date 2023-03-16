@@ -1,0 +1,685 @@
+@font-face {
+  font-family: "Arial";
+  // адрес шрифта и тип
+  src: url("../../assets/fonts/Arimo-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Georgia";
+  // адрес шрифта и тип
+  src: url("../../assets/fonts/Gelasio-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/*Normalize*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+
+.bigred {
+  font-size: 20px;
+  color: red;
+}
+
+/*Normalize*/
+
+/*fonts*/
+$font_arial: "Arial", sans-serif;
+$font_georgia: "Georgia", sans-serif;
+/*fonts*/
+
+/*variables*/
+
+/*container*/
+$container: 1200px;
+
+/*container*/
+$color_h1: #f1cdb3;
+$color-white: #ffffff;
+$color_card: #fafafa;
+$color-dark: #545454;
+$color-p-text: #4c4c4c;
+$color-subtitle: #b2b2b2;
+$color_nav: #cdcdcd;
+$color_nav_hover: #fafafa;
+$color_nav_active: #f1cdb3;
+$button_active: #fddcc4;
+$button-text: #292929;
+$background_gradient: radial-gradient(
+  100% 215.42% at 0% 0%,
+  #5b483a 0%,
+  #262425 100%
+);
+$background_grey: #f6f6f6;
+/*variables*/
+
+/*mixin*/
+@mixin container($container) {
+  max-width: $container;
+  margin: 0 auto;
+}
+
+@mixin h2($font_georgia, $color-white) {
+  font-family: $font_georgia;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 275%;
+  line-height: 130%;
+  color: $color-white;
+}
+
+@mixin h3($font_georgia, $color-dark) {
+  font-family: $font_georgia;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 218.75%;
+  line-height: 130%;
+  color: $color-dark;
+  letter-spacing: 0.06em;
+}
+
+@mixin h4($font_georgia, $color-dark) {
+  font-family: $font_georgia;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 125%;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+}
+
+@mixin p($font_arial) {
+  font-family: $font_arial;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 93.75%;
+  line-height: 160%;
+}
+
+@mixin navhover($color_nav_hover) {
+  color: $color_nav_hover;
+}
+
+@mixin navactive($color_nav_active) {
+  border-bottom: solid 3px $color_nav_active;
+}
+
+@mixin buttonwithcolor($color_nav_active, $font_georgia) {
+  padding: 17px 45px 13px 45px;
+  width: 207px;
+  height: 52px;
+  background-color: $color_nav_active;
+  border-radius: 100px;
+  font-family: $font_georgia;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100%; // неправильный шрифт
+  line-height: 130%;
+  text-align: center;
+}
+
+@mixin buttonactive($button_active) {
+  background-color: $button_active;
+}
+@mixin buttonwithoutcolor($color_nav_active, $font_georgia, $button-text) {
+  padding: 15px 45px;
+  width: 187px;
+  height: 52px;
+  border: 2px solid $color_nav_active;
+  border-radius: 100px;
+  font-family: $font_georgia;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100%; // неправильный шрифт
+  line-height: 130%;
+  text-align: center;
+  color: $button-text;
+  letter-spacing: 0.06em;
+}
+
+@mixin buttonwithoutcoloractive($button_active) {
+  background-color: $button_active;
+  border: 2px solid $button_active;
+}
+
+/*mixin*/
+
+/*common css*/
+.body {
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+.main {
+  flex: 1 1 auto;
+}
+/*common css*/
+
+.header {
+  position: relative;
+  z-index: 2;
+  .header_container {
+    @include container($container);
+    box-sizing: border-box;
+    padding: 60px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .logo-title {
+        font-family: $font_georgia;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 200%;
+        line-height: 110%;
+        color: $color_h1;
+        letter-spacing: 0.06em;
+        cursor: pointer;
+        padding-top: 2px;
+        transition: all 0.5s ease;
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        a {
+          color: inherit;
+          &:hover {
+            color: $color_nav_hover;
+          }
+        }
+      }
+      .logo-text {
+        font-family: $font_arial;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 81.25%;
+        line-height: 15px;
+        letter-spacing: 0.1em;
+        color: $color-white;
+        padding-left: 3px;
+      }
+    }
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    .menu-list {
+      display: flex;
+      align-items: center;
+      gap: 38px;
+      .menu-item {
+        margin-top: -4px;
+        transition: all 0.5s ease;
+        &:hover {
+          transform: scale(1.05);
+        }
+        &:first-child {
+          @include navactive($color_nav_active);
+          transform: none;
+          a {
+            pointer-events: none;
+            @include navhover($color_nav_hover);
+          }
+        }
+        a {
+          text-decoration: none;
+          cursor: pointer;
+          font-family: $font_arial;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 93.75%;
+          line-height: 160%;
+          color: $color_nav;
+          transition: all 0.5s ease;
+          &:hover {
+            @include navhover($color_nav_hover);
+            transform: scale(1.1);
+          }
+          &:active {
+            @include navactive($color_nav_active);
+          }
+        }
+      }
+    }
+  }
+}
+
+.not-only {
+  margin-top: -180px;
+  background: $background_gradient;
+  .not-only_container {
+    @include container($container);
+    box-sizing: border-box;
+    padding-top: 180px;
+    display: flex;
+    justify-content: space-between;
+    .text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 39px;
+      max-width: 462px;
+      margin-top: 166px;
+      .not-only-title {
+        max-width: 310px;
+        @include h2($font_georgia, $color-white);
+      }
+      .not-only-text {
+        @include p($font_arial);
+        color: $color_nav;
+        letter-spacing: 0.2px;
+      }
+      .not-only_button {
+        margin-top: 2px;
+        @include buttonwithcolor($color_nav_active, $font_georgia);
+        display: block;
+        cursor: pointer;
+        color: $button-text;
+        text-align: center;
+        letter-spacing: 1.4px;
+        &:hover {
+          @include buttonactive($button_active);
+        }
+      }
+    }
+    .not-only_image {
+    }
+  }
+}
+
+.about {
+  .about_container {
+    @include container($container);
+    padding-top: 80px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    .about-image {
+    }
+    .text-block {
+      padding-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      max-width: 430px;
+      .about-title {
+        @include h3($font_georgia, $color-dark);
+        max-width: 370px;
+      }
+      .about-text {
+        @include p($font_arial);
+        color: $color-p-text;
+        letter-spacing: 0.18px;
+      }
+      .text2 {
+        padding-top: 3px;
+      }
+    }
+  }
+}
+
+.our-friends {
+  background-color: $background_grey;
+  .our-friends_container {
+    @include container($container);
+    padding-top: 82px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 57px;
+    align-items: center;
+    .our-friends_title {
+      @include h3($font_georgia, $color-dark);
+      max-width: 400px;
+      text-align: center;
+    }
+    .our-friends_slider {
+      display: flex;
+      align-items: center;
+      gap: 53px;
+      .slider_arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 52px;
+        width: 52px;
+        border: solid 2px $color_nav_active;
+        border-radius: 100px;
+        cursor: pointer;
+        .arrow-image {
+        }
+        &:hover {
+          @include buttonwithoutcoloractive($button_active);
+        }
+      }
+      .slider_container {
+        display: flex;
+        align-items: center;
+        gap: 90px;
+        .card {
+          background-color: $color_card;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 30px;
+          padding-bottom: 30px;
+          border-radius: 9px;
+          transition: all 0.5s ease;
+          cursor: pointer;
+          &:hover {
+            background-color: $color-white;
+            transform: scale(1.03);
+          }
+
+          &:hover .card_button {
+            @include buttonwithoutcoloractive($button_active);
+          }
+
+          .card_image {
+          }
+          .card_title {
+            @include h4($font_georgia, $color-dark);
+          }
+
+          .card_button {
+            cursor: pointer;
+            @include buttonwithoutcolor(
+              $color_nav_active,
+              $font_georgia,
+              $button-text
+            );
+            .button_text {
+              letter-spacing: 1px;
+            }
+            &:hover {
+              @include buttonwithoutcoloractive($button_active);
+            }
+          }
+        }
+      }
+    }
+    .our-friends_button {
+      margin-top: 3px;
+      display: block;
+      cursor: pointer;
+      @include buttonwithcolor($color_nav_active, $font_georgia);
+      color: $button-text;
+      width: 261px;
+      letter-spacing: 1.4px;
+      &:hover {
+        @include buttonactive($button_active);
+      }
+    }
+  }
+}
+
+.help {
+  .help-container {
+    @include container($container);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 83px;
+    padding-bottom: 98px;
+    gap: 58px;
+    .help-title {
+      @include h3($font_georgia, $color-dark);
+      max-width: 312px;
+      text-align: center;
+      padding-left: 2px;
+    }
+    .help-icons_block {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 120px;
+      justify-content: center;
+      row-gap: 55px;
+      .icon-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        .icon-image {
+        }
+        .icon-title {
+          @include h4($font_georgia, $color-dark);
+          line-height: 115%;
+        }
+      }
+    }
+  }
+}
+
+.inAddition {
+  background-color: $background_grey;
+  .inAddition-container {
+    @include container($container);
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    padding-top: 83px;
+    padding-bottom: 100px;
+    .inAddition-image {
+      margin-top: -3px;
+      align-self: center;
+    }
+    .inAddition-text {
+      padding-left: 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 19px;
+      max-width: 380px;
+      .text-title {
+        @include h3($font_georgia, $color-dark);
+        max-width: 300px;
+      }
+      .text-bank {
+        font-family: $font_georgia;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 93.75%;
+        line-height: 110%;
+        letter-spacing: 0.06em;
+        color: $color-dark;
+      }
+
+      .text-card_block {
+        margin-top: -2px;
+        background-color: $color_nav_active;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 9.5px 15px;
+        border-radius: 9px;
+        max-width: 349px;
+        .card-icon {
+        }
+        .card-link {
+          padding-top: 2px;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: $color_nav_active;
+          @include h4($font_georgia, $color-dark);
+          color: $color-dark;
+          font-size: 120%;
+          line-height: 115%;
+          letter-spacing: 1.55px;
+          transition: all 0.5s ease;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.05);
+            color: $color_nav_hover;
+          }
+        }
+      }
+      .text-subtitle {
+        margin-top: 1px;
+        font-family: $font_arial;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 75%;
+        line-height: 18px;
+        color: $color-subtitle;
+      }
+    }
+  }
+}
+
+.footer {
+  background: $background_gradient;
+  .footer-container {
+    padding-top: 40px;
+    @include container($container);
+    display: flex;
+    justify-content: space-between;
+
+    .contacts-block {
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 38px;
+      max-width: 302px;
+      .contacts-title {
+        @include h3($font_georgia, $color-dark);
+        color: $color-white;
+      }
+      .contacts-item {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        .item-icon {
+        }
+
+        .item-text {
+          @include h4($font_georgia, $color-dark);
+          line-height: 115%;
+          color: $color_nav_active;
+          transition: all 0.5s ease;
+          cursor: pointer;
+          .footer-link {
+            color: inherit;
+            &:hover {
+              color: $color_nav_hover;
+            }
+          }
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+      .contacts1 {
+      }
+      .contacts2 {
+        margin-top: 6px;
+      }
+      .contacts3 {
+      }
+      .contacts4 {
+        margin-top: 5px;
+      }
+    }
+    .block2 {
+      margin-right: 23px;
+      gap: 29px;
+    }
+
+    .footer-image {
+    }
+  }
+}
