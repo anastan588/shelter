@@ -13,11 +13,17 @@
     <title>Cozy House</title>
   </head>
   <body class="body">
-    <header class="header">
+    <div class="main-container">
+      <header class="header">
       <div class="header_container">
         <div class="logo">
           <h1 class="logo-title"><a href="./index.html">Cozy House</a></h1>
           <p class="logo-text">Shelter for pets in Boston</p>
+        </div>
+        <div class="burger">
+          <div class="burger-item"></div>
+          <div class="burger-item"></div>
+          <div class="burger-item"></div>
         </div>
         <nav class="menu">
           <ul class="menu-list">
@@ -30,8 +36,8 @@
           </ul>
         </nav>
       </div>
-    </header>
-    <main class="main">
+      </header>
+      <main class="main">
       <section class="not-only">
         <div class="not-only_container">
           <div class="text-block">
@@ -84,7 +90,7 @@
             Our friends who <br>are looking for a house
           </h3>
           <div class="our-friends_slider">
-            <div class="slider_arrow">
+            <div class="slider_arrow left">
               <img
                 class="arrow-image"
                 src="../../assets/icons/ArrowLeft.png"
@@ -103,7 +109,7 @@
                   <p class="button_text">Learn more</p>
                 </div>
               </div>
-              <div class="card">
+              <div class="card second-card">
                 <img
                   class="card_image"
                   src="../../assets/images/jennifer.png"
@@ -114,7 +120,7 @@
                   <p class="button_text">Learn more</p>
                 </div>
               </div>
-              <div class="card">
+              <div class="card third_card">
                 <img
                   class="card_image"
                   src="../../assets/images/woody.png"
@@ -126,7 +132,7 @@
                 </div>
               </div>
             </div>
-            <div class="slider_arrow">
+            <div class="slider_arrow right">
               <img
                 class="arrow-image"
                 src="../../assets/icons/ArrowRight.png"
@@ -167,7 +173,7 @@
               />
               <h4 class="icon-title">Toys</h4>
             </div>
-            <div class="icon-card">
+            <div class="icon-card bowls">
               <img
                 src="../../assets/icons/bowls-and-cups.svg"
                 alt="icon"
@@ -183,7 +189,7 @@
               />
               <h4 class="icon-title">Shampoos</h4>
             </div>
-            <div class="icon-card">
+            <div class="icon-card vitamins">
               <img
                 src="../../assets/icons/vitamins.svg"
                 alt="icon"
@@ -199,7 +205,7 @@
               />
               <h4 class="icon-title">Medicines</h4>
             </div>
-            <div class="icon-card">
+            <div class="icon-card collars">
               <img
                 src="../../assets/icons/collars-or-leashes.svg"
                 alt="icon"
@@ -245,8 +251,8 @@
           </div>
         </div>
       </section>
-    </main>
-    <footer class="footer" id="contacts">
+      </main>
+      <footer class="footer" id="contacts">
       <div class="footer-container">
           <div class="contacts-block block1">
             <h3 class="contacts-title">For questions and suggestions</h3>
@@ -294,6 +300,8 @@
           class="footer-image"
         />
       </div>
-    </footer>
+      </footer>
+    </div> 
+    <script src="../../assets/js/burger.js"></script>
   </body>
 </html>
