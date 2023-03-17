@@ -137,18 +137,29 @@ $color_nav_hover: #fafafa;
 $color_nav_active: #f1cdb3;
 $button_active: #fddcc4;
 $button-text: #292929;
+$burger-color: rgba(41, 41, 41, 0.7);
 $background_gradient: radial-gradient(
   100% 215.42% at 0% 0%,
   #5b483a 0%,
   #262425 100%
 );
 $background_grey: #f6f6f6;
+$tablet: 768px;
+$mobile: 320px;
 /*variables*/
 
 /*mixin*/
 @mixin container($container) {
   max-width: $container;
   margin: 0 auto;
+  @media screen and (max-width: 1199px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  @media screen and (max-width: $tablet) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 @mixin h2($font_georgia, $color-white) {
@@ -237,18 +248,24 @@ $background_grey: #f6f6f6;
 
 /*common css*/
 .body {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+.main-container {
   display: flex;
   flex-direction: column;
-  scroll-behavior: smooth;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .main {
   flex: 1 1 auto;
 }
+
 /*common css*/
 
 .header {
-  position: relative;
-  z-index: 2;
   .header_container {
     @include container($container);
     box-sizing: border-box;
@@ -256,6 +273,10 @@ $background_grey: #f6f6f6;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media screen and (max-width: $tablet) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
     .logo {
       display: flex;
       flex-direction: column;
@@ -293,44 +314,87 @@ $background_grey: #f6f6f6;
         padding-left: 3px;
       }
     }
-  }
-  .menu {
-    display: flex;
-    align-items: center;
-    .menu-list {
+    .burger {
+      display: none;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      &:hover {
+        transform: scale(1.2);
+      }
+      @media screen and (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: relative;
+        z-index: 3;
+      }
+      .burger-item {
+        width: 30px;
+        height: 2px;
+        background-color: $color_nav_active;
+      }
+    }
+
+    .menu {
       display: flex;
       align-items: center;
-      gap: 38px;
-      .menu-item {
-        margin-top: -4px;
-        transition: all 0.5s ease;
-        &:hover {
-          transform: scale(1.05);
+      box-sizing: border-box;
+      transition: all 1s ease;
+      @media screen and (max-width: 767px) {
+        align-items: flex-start;
+        position: absolute;
+        right: -100%;
+        max-width: 320px;
+        height: 100vh;
+        top: 0;
+        padding-top: 30vh;
+        padding-left: 35px;
+        padding-right: 35px;
+        z-index: 2;
+        background-color: $burger-color;
+      }
+      .menu-list {
+        display: flex;
+        align-items: center;
+        gap: 38px;
+        @media screen and (max-width: 767px) {
+          flex-direction: column;
+          gap: 40px;
         }
-        &:first-child {
-          @include navactive($color_nav_active);
-          transform: none;
-          a {
-            pointer-events: none;
-            @include navhover($color_nav_hover);
-          }
-        }
-        a {
-          text-decoration: none;
-          cursor: pointer;
-          font-family: $font_arial;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 93.75%;
-          line-height: 160%;
-          color: $color_nav;
+        .menu-item {
+          margin-top: -4px;
           transition: all 0.5s ease;
           &:hover {
-            @include navhover($color_nav_hover);
-            transform: scale(1.1);
+            transform: scale(1.05);
           }
-          &:active {
+          &:first-child {
             @include navactive($color_nav_active);
+            transform: none;
+            a {
+              pointer-events: none;
+              @include navhover($color_nav_hover);
+            }
+          }
+          a {
+            text-decoration: none;
+            cursor: pointer;
+            font-family: $font_arial;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 93.75%;
+            line-height: 160%;
+            color: $color_nav;
+            transition: all 0.5s ease;
+            &:hover {
+              @include navhover($color_nav_hover);
+              transform: scale(1.1);
+            }
+            &:active {
+              @include navactive($color_nav_active);
+            }
+            @media screen and (max-width: 767px) {
+              font-size: 200%;
+            }
           }
         }
       }
@@ -339,7 +403,12 @@ $background_grey: #f6f6f6;
 }
 
 .not-only {
+  position: relative;
+  z-index: -1;
   margin-top: -180px;
+  @media screen and (max-width: $tablet) {
+    margin-top: -150px;
+  }
   background: $background_gradient;
   .not-only_container {
     @include container($container);
@@ -347,20 +416,40 @@ $background_grey: #f6f6f6;
     padding-top: 180px;
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      padding-top: 183px;
+      gap: 100px;
+    }
     .text-block {
       display: flex;
       flex-direction: column;
       gap: 39px;
       max-width: 462px;
       margin-top: 166px;
+      @media screen and (max-width: 1000px) {
+        margin-top: 0px;
+        flex-grow: 2;
+      }
+      @media screen and (max-width: 767px) {
+        align-items: center;
+      }
       .not-only-title {
         max-width: 310px;
         @include h2($font_georgia, $color-white);
+        @media screen and (max-width: 767px) {
+          text-align: center;
+        }
       }
       .not-only-text {
         @include p($font_arial);
         color: $color_nav;
         letter-spacing: 0.2px;
+        @media screen and (max-width: 767px) {
+          text-align: center;
+        }
       }
       .not-only_button {
         margin-top: 2px;
@@ -373,9 +462,21 @@ $background_grey: #f6f6f6;
         &:hover {
           @include buttonactive($button_active);
         }
+        @media screen and (max-width: 1000px) {
+          align-self: center;
+          margin-right: 2px;
+        }
       }
     }
     .not-only_image {
+      @media screen and (max-width: 1199px) {
+        height: auto;
+        width: 70%;
+      }
+      @media screen and (max-width: 1000px) {
+        align-self: flex-end;
+        width: 80.3%;
+      }
     }
   }
 }
@@ -388,7 +489,26 @@ $background_grey: #f6f6f6;
     display: flex;
     justify-content: center;
     gap: 120px;
+    @media screen and (max-width: 1199px) {
+      gap: 50px;
+    }
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      gap: 78px;
+      align-items: center;
+      padding-bottom: 102px;
+    }
+
     .about-image {
+      @media screen and (max-width: 1199px) {
+        height: 100%;
+        width: auto;
+        align-self: flex-end;
+      }
+      @media screen and (max-width: 1000px) {
+        order: 2;
+        align-self: center;
+      }
     }
     .text-block {
       padding-top: 16px;
@@ -396,14 +516,27 @@ $background_grey: #f6f6f6;
       flex-direction: column;
       gap: 22px;
       max-width: 430px;
+      @media screen and (max-width: 1000px) {
+        padding-top: 3px;
+      }
+      @media screen and (max-width: 767px) {
+        align-items: center;
+      }
+
       .about-title {
         @include h3($font_georgia, $color-dark);
         max-width: 370px;
+        @media screen and (max-width: 767px) {
+          text-align: center;
+        }
       }
       .about-text {
         @include p($font_arial);
         color: $color-p-text;
         letter-spacing: 0.18px;
+        @media screen and (max-width: 767px) {
+          text-align: justify;
+        }
       }
       .text2 {
         padding-top: 3px;
@@ -421,6 +554,7 @@ $background_grey: #f6f6f6;
     display: flex;
     flex-direction: column;
     gap: 57px;
+
     align-items: center;
     .our-friends_title {
       @include h3($font_georgia, $color-dark);
@@ -431,6 +565,24 @@ $background_grey: #f6f6f6;
       display: flex;
       align-items: center;
       gap: 53px;
+      @media screen and (max-width: 1199px) {
+        gap: 20px;
+      }
+      @media screen and (max-width: 1100px) {
+        gap: 15px;
+      }
+
+      @media screen and (max-width: $tablet) {
+        gap: 12px;
+      }
+
+      @media screen and (max-width: 767px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        grid-row-gap: 35px;
+        grid-column-gap: 80px;
+      }
       .slider_arrow {
         display: flex;
         justify-content: center;
@@ -446,10 +598,35 @@ $background_grey: #f6f6f6;
           @include buttonwithoutcoloractive($button_active);
         }
       }
+      .left {
+        @media screen and (max-width: 767px) {
+          grid-column-start: 1;
+          grid-column-end: 2;
+          grid-row-start: 2;
+          grid-row-end: 3;
+          justify-self: end;
+        }
+      }
+      .right {
+        @media screen and (max-width: 767px) {
+          grid-column-start: 2;
+          grid-column-end: 3;
+          grid-row-start: 2;
+          grid-row-end: 3;
+        }
+      }
+
       .slider_container {
         display: flex;
         align-items: center;
         gap: 90px;
+        @media screen and (max-width: 1199px) {
+          gap: 40px;
+        }
+        @media screen and (max-width: 767px) {
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
         .card {
           background-color: $color_card;
           display: flex;
@@ -470,6 +647,10 @@ $background_grey: #f6f6f6;
           }
 
           .card_image {
+            @media screen and (max-width: 1199px) {
+              width: 100%;
+              height: auto;
+            }
           }
           .card_title {
             @include h4($font_georgia, $color-dark);
@@ -488,6 +669,20 @@ $background_grey: #f6f6f6;
             &:hover {
               @include buttonwithoutcoloractive($button_active);
             }
+            @media screen and (max-width: $tablet) {
+              margin-top: -1px;
+            }
+          }
+        }
+        .third_card {
+          @media screen and (max-width: 1000px) {
+            display: none;
+          }
+         
+        }
+        .second-card {
+          @media screen and (max-width: 550px) {
+            display: none;
           }
         }
       }
@@ -503,6 +698,9 @@ $background_grey: #f6f6f6;
       &:hover {
         @include buttonactive($button_active);
       }
+      @media screen and (max-width: $tablet) {
+        margin-right: 0.2px;
+      }
     }
   }
 }
@@ -516,6 +714,10 @@ $background_grey: #f6f6f6;
     padding-top: 83px;
     padding-bottom: 98px;
     gap: 58px;
+    @media screen and (max-width: 1000px) {
+      gap: 57px;
+      padding-bottom: 99px;
+    }
     .help-title {
       @include h3($font_georgia, $color-dark);
       max-width: 312px;
@@ -528,6 +730,23 @@ $background_grey: #f6f6f6;
       column-gap: 120px;
       justify-content: center;
       row-gap: 55px;
+      @media screen and (max-width: 1199px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 100px;
+      }
+      @media screen and (max-width: 1000px) {
+        grid-column-gap: 64.5px;
+      }
+      @media screen and (max-width: 767px) {
+        grid-column-gap: 40px;
+      }
+      @media screen and (max-width: 550px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+      }
+
       .icon-card {
         display: flex;
         flex-direction: column;
@@ -535,10 +754,38 @@ $background_grey: #f6f6f6;
         justify-content: center;
         gap: 30px;
         .icon-image {
+          @media screen and (max-width: 1000px) {
+            width: auto;
+            height: auto;
+          }
         }
         .icon-title {
           @include h4($font_georgia, $color-dark);
           line-height: 115%;
+          @media screen and (max-width: 767px) {
+            font-size: 100%;
+          }
+        }
+      }
+      .vitamins {
+        .icon-title {
+          @media screen and (max-width: 1000px) {
+            padding-top: 3px;
+          }
+        }
+      }
+      .collars {
+        .icon-title {
+          @media screen and (max-width: 1000px) {
+            padding-top: 5px;
+          }
+        }
+      }
+      .bowls {
+        .icon-title {
+          @media screen and (max-width: 1000px) {
+            padding-top: 2.5px;
+          }
         }
       }
     }
@@ -554,9 +801,27 @@ $background_grey: #f6f6f6;
     gap: 28px;
     padding-top: 83px;
     padding-bottom: 100px;
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+
     .inAddition-image {
       margin-top: -3px;
       align-self: center;
+      @media screen and (max-width: 1000px) {
+        width: auto;
+        height: auto;
+        margin-top: 0px;
+        order: 2;
+      }
+      @media screen and (max-width: $tablet) {
+        margin-right: 2px;
+      }
+      @media screen and (max-width: 550px) {
+        width: 100%;
+      }
     }
     .inAddition-text {
       padding-left: 2px;
@@ -564,9 +829,18 @@ $background_grey: #f6f6f6;
       flex-direction: column;
       gap: 19px;
       max-width: 380px;
+      @media screen and (max-width: 767px) {
+        align-items: center;
+      }
       .text-title {
         @include h3($font_georgia, $color-dark);
         max-width: 300px;
+        @media screen and (max-width: 767px) {
+          text-align: center;
+        }
+      }
+      @media screen and (max-width: $tablet) {
+        padding-left: 0px;
       }
       .text-bank {
         font-family: $font_georgia;
@@ -587,6 +861,9 @@ $background_grey: #f6f6f6;
         padding: 9.5px 15px;
         border-radius: 9px;
         max-width: 349px;
+        @media screen and (max-width: $tablet) {
+          margin-top: -1px;
+        }
         .card-icon {
         }
         .card-link {
@@ -606,6 +883,9 @@ $background_grey: #f6f6f6;
             transform: scale(1.05);
             color: $color_nav_hover;
           }
+          @media screen and (max-width: $tablet) {
+            letter-spacing: 1.58px;
+          }
         }
       }
       .text-subtitle {
@@ -616,6 +896,9 @@ $background_grey: #f6f6f6;
         font-size: 75%;
         line-height: 18px;
         color: $color-subtitle;
+        @media screen and (max-width: 767px) {
+          text-align: justify;
+        }
       }
     }
   }
@@ -628,16 +911,42 @@ $background_grey: #f6f6f6;
     @include container($container);
     display: flex;
     justify-content: space-between;
-
+    @media screen and (max-width: 1000px) {
+      flex-wrap: wrap;
+      row-gap: 63px;
+      padding-top: 32.5px;
+    }
+    @media screen and (max-width: $tablet) {
+      padding-left: 64px;
+      padding-right: 64px;
+    }
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
     .contacts-block {
       padding-top: 20px;
       display: flex;
       flex-direction: column;
       gap: 38px;
       max-width: 302px;
+      @media screen and (max-width: 1000px) {
+        padding-top: 10px;
+      }
+      @media screen and (max-width: $tablet) {
+        padding-top: 0px;
+        gap: 41px;
+      }
+      @media screen and (max-width: 767px) {
+        align-items: center;
+      }
       .contacts-title {
         @include h3($font_georgia, $color-dark);
         color: $color-white;
+        @media screen and (max-width: 767px) {
+          text-align: center;
+        }
       }
       .contacts-item {
         display: flex;
@@ -667,19 +976,36 @@ $background_grey: #f6f6f6;
       }
       .contacts2 {
         margin-top: 6px;
+        @media screen and (max-width: 1000px) {
+          margin-top: 2px;
+        }
       }
       .contacts3 {
       }
       .contacts4 {
         margin-top: 5px;
+        @media screen and (max-width: 1000px) {
+          margin-right: 4px;
+        }
       }
     }
     .block2 {
       margin-right: 23px;
       gap: 29px;
+      @media screen and (max-width: 1000px) {
+        margin-right: 0px;
+        .contacts-title {
+          margin-left: 1.5px;
+        }
+      }
     }
 
     .footer-image {
+      @media screen and (max-width: 1000px) {
+        height: auto;
+        width: auto;
+        margin: 0 auto;
+      }
     }
   }
 }
