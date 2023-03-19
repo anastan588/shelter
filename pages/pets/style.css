@@ -4,14 +4,12 @@
   font-style: normal;
   font-weight: normal;
 }
-
 @font-face {
   font-family: "Georgia";
   src: url("../../assets/fonts/Gelasio-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
-
 /*Normalize*/
 * {
   padding: 0;
@@ -22,6 +20,7 @@
 *,
 *:before,
 *:after {
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -119,48 +118,29 @@ h6 {
 /*mixin*/
 /*common css*/
 .body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 /*common css*/
 .header .header_container {
   max-width: 1200px;
   margin: 0 auto;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 30px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .header .header_container .logo {
   padding-top: 2px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 7.5px;
 }
-
 .header .header_container .logo .logo-title {
   font-family: "Georgia", sans-serif;
   font-style: normal;
@@ -170,23 +150,17 @@ h6 {
   color: #545454;
   letter-spacing: 0.06em;
   cursor: pointer;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-
 .header .header_container .logo .logo-title:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
-
 .header .header_container .logo .logo-title a {
   color: inherit;
 }
-
 .header .header_container .logo .logo-title a:hover {
   color: #f1cdb3;
 }
-
 .header .header_container .logo .logo-text {
   font-family: "Arial", sans-serif;
   font-style: normal;
@@ -197,33 +171,20 @@ h6 {
   color: #292929;
   padding-left: 3px;
 }
-
 .header .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .header .menu .menu-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 38px;
 }
-
 .header .menu .menu-list .menu-item {
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-
 .header .menu .menu-list .menu-item:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
-
 .header .menu .menu-list .menu-item a {
   text-decoration: none;
   cursor: pointer;
@@ -234,26 +195,20 @@ h6 {
   line-height: 160%;
   color: #545454;
 }
-
 .header .menu .menu-list .menu-item a:hover {
   color: #292929;
 }
-
 .header .menu .menu-list .menu-item a:active {
   border-bottom: solid 3px #f1cdb3;
   color: #545454;
 }
-
 .header .menu .menu-list .active {
   border-bottom: solid 3px #f1cdb3;
   color: #545454;
 }
-
 .header .menu .menu-list .active:hover {
-  -webkit-transform: none;
-          transform: none;
+  transform: none;
 }
-
 .header .menu .menu-list .active a {
   pointer-events: none;
   color: #292929;
@@ -262,25 +217,16 @@ h6 {
 .our-friends {
   background-color: #f6f6f6;
 }
-
 .our-friends .our-friends_container {
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 83px;
   padding-bottom: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 56px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .our-friends .our-friends_container .our-friends_title {
   font-family: "Georgia", sans-serif;
   font-style: normal;
@@ -292,52 +238,32 @@ h6 {
   max-width: 400px;
   text-align: center;
 }
-
 .our-friends .our-friends_container .slider_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-column-gap: 40px;
-          column-gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 40px;
   row-gap: 30px;
 }
-
 .our-friends .our-friends_container .slider_container .card {
   background-color: #fafafa;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   gap: 30px;
   padding-bottom: 30px;
   border-radius: 9px;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   cursor: pointer;
 }
-
 .our-friends .our-friends_container .slider_container .card:hover {
   background-color: #ffffff;
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+  transform: scale(1.03);
 }
-
 .our-friends .our-friends_container .slider_container .card:hover .card_button {
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
 }
-
 .our-friends .our-friends_container .slider_container .card .card_title {
   font-family: "Georgia", sans-serif;
   font-style: normal;
@@ -346,7 +272,6 @@ h6 {
   line-height: 23px;
   letter-spacing: 0.06em;
 }
-
 .our-friends .our-friends_container .slider_container .card .card_button {
   cursor: pointer;
   padding: 15px 45px;
@@ -363,64 +288,42 @@ h6 {
   color: #292929;
   letter-spacing: 0.06em;
 }
-
 .our-friends .our-friends_container .slider_container .card .card_button:hover {
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
 }
-
 .our-friends .our-friends_container .arrows_container {
   padding-top: 4px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 20px;
 }
-
 .our-friends .our-friends_container .arrows_container .slider_arrow_blind {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-sizing: border-box;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   height: 52px;
   width: 52px;
   border: solid 2px #cdcdcd;
   border-radius: 100px;
 }
-
 .our-friends .our-friends_container .arrows_container .slider_arrow_blind:hover {
   pointer-events: none;
 }
-
 .our-friends .our-friends_container .arrows_container .slider_number_arrow {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   height: 52px;
   width: 52px;
   background-color: #f1cdb3;
   border-radius: 100px;
   cursor: pointer;
 }
-
 .our-friends .our-friends_container .arrows_container .slider_number_arrow:hover {
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
 }
-
 .our-friends .our-friends_container .arrows_container .slider_number_arrow .number {
   font-family: "Georgia", sans-serif;
   font-style: normal;
@@ -430,24 +333,16 @@ h6 {
   letter-spacing: 0.06em;
   color: #292929;
 }
-
 .our-friends .our-friends_container .arrows_container .slider_arrow_dark {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   height: 52px;
   width: 52px;
   border: solid 2px #f1cdb3;
   border-radius: 100px;
   cursor: pointer;
 }
-
 .our-friends .our-friends_container .arrows_container .slider_arrow_dark:hover {
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
@@ -456,32 +351,20 @@ h6 {
 .footer {
   background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
 }
-
 .footer .footer-container {
   padding-top: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .footer .footer-container .contacts-block {
   padding-top: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 38px;
   max-width: 302px;
 }
-
 .footer .footer-container .contacts-block .contacts-title {
   font-family: "Georgia", sans-serif;
   font-style: normal;
@@ -492,17 +375,11 @@ h6 {
   letter-spacing: 0.06em;
   color: #ffffff;
 }
-
 .footer .footer-container .contacts-block .contacts-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 20px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .footer .footer-container .contacts-block .contacts-item .item-text {
   font-family: "Georgia", sans-serif;
   font-style: normal;
@@ -512,34 +389,25 @@ h6 {
   letter-spacing: 0.06em;
   line-height: 115%;
   color: #f1cdb3;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   cursor: pointer;
 }
-
 .footer .footer-container .contacts-block .contacts-item .item-text .footer-link {
   color: inherit;
 }
-
 .footer .footer-container .contacts-block .contacts-item .item-text .footer-link:hover {
   color: #fafafa;
 }
-
 .footer .footer-container .contacts-block .contacts-item .item-text:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
-
 .footer .footer-container .contacts-block .contacts2 {
   margin-top: 6px;
 }
-
 .footer .footer-container .contacts-block .contacts4 {
   margin-top: 5px;
 }
-
 .footer .footer-container .block2 {
   margin-right: 23px;
   gap: 29px;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
