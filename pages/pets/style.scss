@@ -135,17 +135,30 @@ $background_grey: #f6f6f6;
 $button_active: #fddcc4;
 $button-text: #292929;
 $color-arrows-blind: #cdcdcd;
-$background_gradient: radial-gradient(
-  100% 215.42% at 0% 0%,
-  #5b483a 0%,
-  #262425 100%
-);
+$burger-color: rgba(41, 41, 41, 0.7);
+$overlay-color: rgba(41, 41, 41, 0.4);
+$background_gradient: url(../../assets/images/start-screen-gradient-background.png),
+  radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%) #211f20;
+$tablet: 768px;
+$mobile: 320px;
 /*variables*/
 
 /*mixin*/
 @mixin container($container) {
   max-width: $container;
   margin: 0 auto;
+  @media screen and (max-width: 1199px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  @media screen and (max-width: $tablet) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @media screen and (max-width: 470px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 @mixin navhover($color_nav_hover) {
@@ -165,6 +178,9 @@ $background_gradient: radial-gradient(
   line-height: 130%;
   color: $color-dark;
   letter-spacing: 0.06em;
+  @media screen and (max-width: 470px) {
+    font-size: 156.25%;
+  }
 }
 
 @mixin h4($font_georgia, $color-dark) {
@@ -174,6 +190,9 @@ $background_gradient: radial-gradient(
   font-size: 125%;
   line-height: 23px;
   letter-spacing: 0.06em;
+  @media screen and (max-width: 470px) {
+    font-size: 93.75%;
+  }
 }
 
 @mixin p($font_arial) {
@@ -226,21 +245,50 @@ $background_gradient: radial-gradient(
 
 /*common css*/
 .body {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.main-container {
   display: flex;
   flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .main {
   flex: 1 1 auto;
 }
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: $overlay-color;
+}
+
 /*common css*/
 
 .header {
+  position: relative;
+  z-index: 2;
   .header_container {
     @include container($container);
     box-sizing: border-box;
     padding: 30px 0px;
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: $tablet) {
+      padding-bottom: 30px;
+    }
+    @media screen and (max-width: 470px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
     .logo {
       padding-top: 2px;
       display: flex;
@@ -275,15 +323,66 @@ $background_gradient: radial-gradient(
         letter-spacing: 0.1em;
         color: $color-dark;
         padding-left: 3px;
+        @media screen and (max-width: 470px) {
+          padding-left: 4px;
+          letter-spacing: 0.095em;
+        }
       }
+    }
+  }
+  .burger {
+    display: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    &:hover {
+      transform: scale(1.2);
+    }
+    @media screen and (max-width: 767px) {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      position: relative;
+      z-index: 4;
+      justify-content: center;
+    }
+    .burger-item {
+      width: 30px;
+      height: 2px;
+      background-color: $color_nav_active;
+    }
+    @media screen and (max-width: 470px) {
+      gap: 8px;
     }
   }
   .menu {
     display: flex;
     align-items: center;
+    box-sizing: border-box;
+    transition: all 1s ease;
+    @media screen and (max-width: 767px) {
+      align-items: flex-start;
+      position: absolute;
+      right: -100%;
+      max-width: 320px;
+      height: 100vh;
+      top: 0;
+      padding-top: 30vh;
+      padding-left: 38px;
+      padding-right: 38px;
+      z-index: 3;
+      background-color: $burger-color;
+    }
     .menu-list {
       display: flex;
+      align-items: center;
       gap: 38px;
+      @media screen and (max-width: 1199px) {
+        margin-top: -2px;
+      }
+      @media screen and (max-width: 767px) {
+        flex-direction: column;
+        gap: 40px;
+      }
       .menu-item {
         transition: all 0.5s ease;
         &:hover {
@@ -301,9 +400,16 @@ $background_gradient: radial-gradient(
           color: $color_nav;
           &:hover {
             @include navhover($color_nav_hover);
+            @media screen and (max-width: 767px) {
+              color: $color_card;
+            }
           }
           &:active {
             @include navactive($color_nav_active);
+          }
+          @media screen and (max-width: 767px) {
+            font-size: 200%;
+            color: $color-arrows-blind;
           }
         }
       }
@@ -315,6 +421,9 @@ $background_gradient: radial-gradient(
         a {
           pointer-events: none;
           @include navhover($color_nav_hover);
+          @media screen and (max-width: 767px) {
+            color: $color_card;
+          }
         }
       }
     }
@@ -331,6 +440,16 @@ $background_gradient: radial-gradient(
     flex-direction: column;
     gap: 56px;
     align-items: center;
+    @media screen and (max-width: 1199px) {
+      gap: 26px;
+      padding-bottom: 76px;
+    }
+    @media screen and (max-width: 470px) {
+      padding-top: 44px;
+      padding-bottom: 42px;
+      gap: 39px;
+    }
+
     .our-friends_title {
       @include h3($font_georgia, $color-dark);
       max-width: 400px;
@@ -342,6 +461,25 @@ $background_gradient: radial-gradient(
       flex-wrap: wrap;
       column-gap: 40px;
       row-gap: 30px;
+      @media screen and (max-width: 1199px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        grid-row-gap: 35px;
+        grid-column-gap: 80px;
+      }
+
+      @media screen and (max-width: $tablet) {
+        column-gap: 40px;
+        grid-row-gap: 30px;
+      }
+      @media screen and (max-width: 767px) {
+        grid-row-gap: 30px;
+        grid-column-gap: 30px;
+      }
+      @media screen and (max-width: 650px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
       .card {
         background-color: $color_card;
         display: flex;
@@ -365,6 +503,10 @@ $background_gradient: radial-gradient(
         }
         .card_title {
           @include h4($font_georgia, $color-dark);
+          @media screen and (max-width: 470px) {
+            font-size: 125%;
+            line-height: 23px;
+          }
         }
 
         .card_button {
@@ -381,12 +523,44 @@ $background_gradient: radial-gradient(
           }
         }
       }
+
+      .four-card {
+        @media screen and (max-width: 767px) {
+          display: none;
+        }
+      }
+      .five-card {
+        @media screen and (max-width: 767px) {
+          display: none;
+        }
+      }
+      .six-card {
+        @media screen and (max-width: 767px) {
+          display: none;
+        }
+      }
+      .seven-card {
+        @media screen and (max-width: 1199px) {
+          display: none;
+        }
+      }
+      .eight-card {
+        @media screen and (max-width: 1199px) {
+          display: none;
+        }
+      }
     }
     .arrows_container {
       padding-top: 4px;
       display: flex;
       gap: 20px;
-
+      @media screen and (max-width: 1199px) {
+        padding-top: 14px;
+      }
+      @media screen and (max-width: 470px) {
+        gap: 10px;
+        padding-top: 3px;
+      }
       .slider_arrow_blind {
         box-sizing: border-box;
         display: flex;
@@ -449,11 +623,34 @@ $background_gradient: radial-gradient(
 
 .footer {
   background: $background_gradient;
+  background-size: cover;
   .footer-container {
     padding-top: 40px;
     @include container($container);
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 1000px) {
+      flex-wrap: wrap;
+      row-gap: 63px;
+      padding-top: 32.5px;
+    }
+    @media screen and (max-width: $tablet) {
+      padding-left: 64px;
+      padding-right: 64px;
+    }
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    @media screen and (max-width: 470px) {
+      padding-top: 32px;
+      padding-left: 0px;
+      padding-right: 0px;
+      gap: 40.5px;
+    }
 
     .contacts-block {
       padding-top: 20px;
@@ -461,9 +658,25 @@ $background_gradient: radial-gradient(
       flex-direction: column;
       gap: 38px;
       max-width: 302px;
+      @media screen and (max-width: 1000px) {
+        padding-top: 10px;
+      }
+      @media screen and (max-width: $tablet) {
+        padding-top: 0px;
+        gap: 41px;
+      }
+      @media screen and (max-width: 767px) {
+        align-items: center;
+      }
       .contacts-title {
         @include h3($font_georgia, $color-dark);
         color: $color-white;
+        @media screen and (max-width: 767px) {
+          text-align: center;
+        }
+        @media screen and (max-width: 470px) {
+          max-width: 270px;
+        }
       }
       .contacts-item {
         display: flex;
@@ -487,25 +700,65 @@ $background_gradient: radial-gradient(
           &:hover {
             transform: scale(1.05);
           }
+          @media screen and (max-width: 470px) {
+            font-size: 125%;
+            line-height: 115%;
+            letter-spacing: 0.06em;
+          }
         }
       }
       .contacts1 {
       }
       .contacts2 {
         margin-top: 6px;
+        @media screen and (max-width: 1000px) {
+          margin-top: 2px;
+        }
       }
       .contacts3 {
+        @media screen and (max-width: 1000px) {
+          margin-top: 2px;
+        }
+        @media screen and (max-width: 470px) {
+          margin-top: 0px;
+        }
       }
       .contacts4 {
         margin-top: 5px;
+        @media screen and (max-width: 1000px) {
+          margin-right: 4px;
+        }
+        @media screen and (max-width: 470px) {
+          margin-right: 0px;
+          align-self: flex-start;
+          margin-top: 0px;
+        }
       }
     }
     .block2 {
       margin-right: 23px;
       gap: 29px;
+      @media screen and (max-width: 1000px) {
+        margin-right: 0px;
+        .contacts-title {
+          margin-left: 1.5px;
+        }
+      }
+      @media screen and (max-width: 470px) {
+        gap: 39px;
+      }
     }
 
     .footer-image {
+      @media screen and (max-width: 1000px) {
+        height: auto;
+        width: auto;
+        margin: 0 auto;
+      }
+      @media screen and (max-width: 470px) {
+        width: 81.25%;
+        margin-top: -1px;
+      }
     }
   }
 }
