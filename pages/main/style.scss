@@ -139,6 +139,7 @@ $button_active: #fddcc4;
 $button-text: #292929;
 $burger-color: rgba(41, 41, 41, 0.7);
 $overlay-color: rgba(41, 41, 41, 0.4);
+$color-popup: #000000;
 $background_gradient: url(../../assets/images/start-screen-gradient-background.png),
   radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%) #211f20;
 $background_grey: #f6f6f6;
@@ -286,6 +287,88 @@ $mobile: 320px;
   height: 100%;
   z-index: 2;
   background-color: $overlay-color;
+}
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  max-width: 1000px;
+  display: flex;
+  background-color: $color_card;
+  border-radius: 9px;
+  gap: 29px;
+  .close-button {
+    position: absolute;
+    right: -50px;
+    top: -50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    width: 52px;
+    border: solid 2px $color_nav_active;
+    border-radius: 100px;
+    transition: all 0.5s ease;
+    &:hover {
+      @include buttonwithoutcoloractive($button_active);
+    }
+    .close-image {
+    }
+  }
+  .popup-image {
+    max-height: 500px;
+    max-width: 500px;
+    height: 100%;
+    width: auto;
+  }
+  .describtion-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 351px;
+    gap: 40px;
+    box-sizing: border-box;
+    padding-right: 20px;
+    .name-block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .pet-name {
+        @include h3($font_georgia, $color-dark);
+        color: $color-popup;
+      }
+      .pet-breed {
+        @include h4($font_georgia, $color-dark);
+        color: $color-popup;
+      }
+    }
+    .pet-description {
+      @include p($font_arial);
+      font-family: $font_georgia;
+      color: $color-popup;
+    
+    }
+    .otherinformation-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      list-style-type: circle;
+      padding-left: 15px;
+      .otherinformation-item {
+        display: flex;
+        gap: 5px;
+
+        .inf-title {
+          font-weight: bold;
+        }
+        .inf-desc {
+        }
+      }
+    }
+  }
 }
 
 /*common css*/

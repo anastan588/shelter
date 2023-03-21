@@ -1,9 +1,9 @@
 let burgerImage = document.querySelector(".burger");
 let menu = document.querySelector(".menu");
 let menuList = document.querySelector(".menu-list");
-let body = document.querySelector(".body");
+export let body = document.querySelector(".body");
 let menuItem = document.querySelectorAll(".menu-item");
-let overlay = document.querySelector(".overlay");
+export let overlay = document.querySelector(".overlay");
 
 function openOrCloseBurger(event) {
   event.stopPropagation();
