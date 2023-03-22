@@ -7,7 +7,10 @@ export let overlay = document.querySelector(".overlay");
 
 function openOrCloseBurger(event) {
   event.stopPropagation();
-  if (!menu.classList.contains("burger-open")) {
+  //console.log(event);
+  //console.log(window.innerWidth);
+  //console.log(typeof window.innerWidth);
+  if (!menu.classList.contains("burger-open") && window.innerWidth<=767) {
     overlay.style.display = "block";
     menu.classList.toggle("burger-open");
     menu.style.right = "0%";
