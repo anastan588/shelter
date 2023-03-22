@@ -148,13 +148,41 @@ h6 {
   position: fixed;
   top: 50%;
   left: 50%;
+  margin-right: -50%;
   transform: translate(-50%, -50%);
   z-index: 3;
-  max-width: 1000px;
   display: flex;
   background-color: #fafafa;
   border-radius: 9px;
   gap: 29px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+@media screen and (max-width: 1050px) {
+  .popup-container {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 680px) {
+  .popup-container {
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    justify-content: center;
+    width: 75%;
+  }
+}
+@media screen and (max-width: 470px) {
+  .popup-container {
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    width: 65%;
+  }
 }
 .popup-container .close-button {
   position: absolute;
@@ -174,11 +202,26 @@ h6 {
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
 }
+@media screen and (max-width: 680px) {
+  .popup-container .close-button {
+    height: 40px;
+    width: 40px;
+    right: -38px;
+    top: -38px;
+  }
+}
 .popup-container .popup-image {
   max-height: 500px;
   max-width: 500px;
   height: 100%;
-  width: auto;
+  width: 50%;
+  border-radius: 9px;
+  align-self: center;
+}
+@media screen and (max-width: 680px) {
+  .popup-container .popup-image {
+    display: none;
+  }
 }
 .popup-container .describtion-container {
   display: flex;
@@ -187,7 +230,12 @@ h6 {
   max-width: 351px;
   gap: 40px;
   box-sizing: border-box;
-  padding-right: 20px;
+  width: 50%;
+}
+@media screen and (max-width: 680px) {
+  .popup-container .describtion-container {
+    width: 100%;
+  }
 }
 .popup-container .describtion-container .name-block {
   display: flex;
@@ -233,19 +281,47 @@ h6 {
   color: #000000;
 }
 .popup-container .describtion-container .otherinformation-list {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  list-style-type: circle;
   padding-left: 15px;
+}
+@media screen and (max-width: 680px) {
+  .popup-container .describtion-container .otherinformation-list {
+    padding-left: 0px;
+    gap: 5px;
+  }
 }
 .popup-container .describtion-container .otherinformation-list .otherinformation-item {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 5px;
+  list-style: disc inside;
 }
 .popup-container .describtion-container .otherinformation-list .otherinformation-item .inf-title {
+  display: list-item;
   font-weight: bold;
 }
+@media screen and (max-width: 470px) {
+  .popup-container .describtion-container .otherinformation-list .otherinformation-item .inf-title {
+    font-size: 85%;
+  }
+}
+.popup-container .describtion-container .otherinformation-list .otherinformation-item .inf-title::marker {
+  color: #f1cdb3;
+  font-size: 100%;
+}
+.popup-container .describtion-container .otherinformation-list .otherinformation-item .inf-desc {
+  font-size: 100%;
+}
+@media screen and (max-width: 470px) {
+  .popup-container .describtion-container .otherinformation-list .otherinformation-item .inf-desc {
+    font-size: 85%;
+  }
+}
+
 /*common css*/
 .header {
   position: relative;
