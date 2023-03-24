@@ -1,7 +1,20 @@
 import { body, overlay } from "./burger.js";
 let cardsContainer = document.querySelector(".slider_container");
+let mainSliderContainer = document.querySelector(".main-slider-container");
+//console.log(cardsContainer);
 let cardsArray = document.getElementsByClassName("card");
 let mainContainer = document.querySelector(".main-container");
+
+function updateCardsContainer(event) {
+  //console.log(event);
+  setTimeout(() => {
+    cardsContainer = document.querySelector(".slider_container");
+    //console.log(cardsContainer.children);
+    cardsContainer.addEventListener("click", openPopUp);
+    return cardsContainer;
+  }, 1050);
+  
+}
 
 async function openPopUp(event) {
   event.stopPropagation();
@@ -112,10 +125,13 @@ function closePopUp(event) {
   //console.log(this);
   let popUpContainer = document.querySelector(".popup-container");
   //console.log(popUpContainer);
-  popUpContainer.remove();
-  overlay.style.display = "none";
-  body.style.overflow = "auto";
+  if (popUpContainer !== null) {
+    popUpContainer.remove();
+    overlay.style.display = "none";
+    body.style.overflow = "auto";
+  }
 }
 
 cardsContainer.addEventListener("click", openPopUp);
+mainSliderContainer.addEventListener("DOMNodeInserted", updateCardsContainer);
 overlay.addEventListener("click", closePopUp);

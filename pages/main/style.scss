@@ -307,7 +307,6 @@ $mobile: 320px;
   padding-bottom: 20px;
   padding-left: 20px;
   @media screen and (max-width: 680px) {
-    
     justify-content: center;
     width: 75%;
   }
@@ -393,7 +392,7 @@ $mobile: 320px;
       .otherinformation-item {
         display: flex;
         align-items: center;
-        flex-wrap:wrap;
+        flex-wrap: wrap;
         gap: 5px;
         list-style: disc inside;
         .inf-title {
@@ -834,85 +833,181 @@ $mobile: 320px;
           grid-row-end: 3;
         }
       }
-
-      .slider_container {
+      .main-slider-container {
         display: flex;
-        align-items: center;
-        gap: 90px;
+        box-sizing: border-box;
+        overflow: hidden;
+        max-width: 990px;
+        transition: all 1s ease;
         @media screen and (max-width: 1199px) {
-          gap: 40px;
+          max-width: 890px;
         }
+        @media screen and (max-width: 1070px) {
+          max-width: 880px;
+        }
+        @media screen and (max-width: 1065px) {
+          max-width: 875px;
+        }
+        @media screen and (max-width: 1058px) {
+          max-width: 870px;
+        }
+        @media screen and (max-width: 1058px) {
+          max-width: 865px;
+        }
+        @media screen and (max-width: 1046px) {
+          max-width: 860px;
+        }
+        @media screen and (max-width: 1040px) {
+          max-width: 855px;
+        }
+        @media screen and (max-width: 1035px) {
+          max-width: 850px;
+        }
+        @media screen and (max-width: 1030px) {
+          max-width: 845px;
+        }
+        @media screen and (max-width: 1025px) {
+          max-width: 840px;
+        }
+        @media screen and (max-width: 1020px) {
+          max-width: 835px;
+        }
+        @media screen and (max-width: 1015px) {
+          max-width: 830px;
+        }
+        @media screen and (max-width: 1010px) {
+          max-width: 825px;
+        }
+        @media screen and (max-width: 1005px) {
+          max-width: 820px;
+        }
+        @media screen and (max-width: 1000px) {
+          max-width: 580px;
+        }
+        @media screen and (max-width: 640px) {
+          max-width: 575px;
+        }
+        @media screen and (max-width: 635px) {
+          max-width: 570px;
+        }
+        @media screen and (max-width: 630px) {
+          max-width: 565px;
+        }
+        @media screen and (max-width: 625px) {
+          max-width: 560px;
+        }
+        @media screen and (max-width: 620px) {
+          max-width: 555px;
+        }
+        @media screen and (max-width: 615px) {
+          max-width: 550px;
+        }
+        @media screen and (max-width: 610px) {
+          max-width: 545px;
+        }
+        @media screen and (max-width: 605px) {
+          max-width: 540px;
+        }
+         @media screen and (max-width: 600px) {
+          max-width: 535px;
+        }
+        @media screen and (max-width: 590px) {
+          max-width: 530px;
+        }
+        @media screen and (max-width: 580px) {
+          max-width: 520px;
+        }
+        @media screen and (max-width: 570px) {
+          max-width: 510px;
+        }
+        @media screen and (max-width: 560px) {
+          max-width: 500px;
+        }
+        @media screen and (max-width: 550px) {
+          max-width: 270px;
+        }
+        
         @media screen and (max-width: 767px) {
           grid-column-start: 1;
           grid-column-end: 3;
         }
-        .card {
-          background-color: $color_card;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 30px;
-          padding-bottom: 30px;
-          border-radius: 9px;
-          transition: all 0.5s ease;
-          cursor: pointer;
-          @media screen and (max-width: 470px) {
-            gap: 31px;
-          }
-          &:hover {
-            background-color: $color-white;
-            transform: scale(1.03);
-          }
-          &:hover .card_button {
-            @include buttonwithoutcoloractive($button_active);
-          }
 
-          .card_image {
-            @media screen and (max-width: 1199px) {
-              width: 100%;
-              height: auto;
-            }
+        .slider_container {
+          display: flex;
+          align-items: center;
+          gap: 90px;
+          transition: all 1s ease;
+          @media screen and (max-width: 1199px) {
+            gap: 40px;
           }
-          .card_title {
-            @include h4($font_georgia, $color-dark);
-            @media screen and (max-width: 470px) {
-              font-size: 125%;
-              line-height: 23px;
-            }
-          }
-          .card_button {
+          .card {
+            background-color: $color_card;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding-bottom: 30px;
+            border-radius: 9px;
+            transition: all 0.5s ease;
             cursor: pointer;
-            @include buttonwithoutcolor(
-              $color_nav_active,
-              $font_georgia,
-              $button-text
-            );
-            .button_text {
-              letter-spacing: 1px;
-              @media screen and (max-width: 470px) {
-                letter-spacing: 1.05px;
-              }
+            @media screen and (max-width: 470px) {
+              gap: 31px;
             }
             &:hover {
+              background-color: $color-white;
+              transform: scale(1.03);
+            }
+            &:hover .card_button {
               @include buttonwithoutcoloractive($button_active);
             }
-            @media screen and (max-width: $tablet) {
-              margin-top: -1px;
+
+            .card_image {
+              @media screen and (max-width: 1199px) {
+                width: 100%;
+                height: auto;
+              }
             }
-            @media screen and (max-width: 470px) {
-              margin-top: -2px;
-              margin-right: 2px;
+            .card_title {
+              @include h4($font_georgia, $color-dark);
+              @media screen and (max-width: 470px) {
+                font-size: 125%;
+                line-height: 23px;
+              }
+            }
+            .card_button {
+              cursor: pointer;
+              @include buttonwithoutcolor(
+                $color_nav_active,
+                $font_georgia,
+                $button-text
+              );
+              .button_text {
+                letter-spacing: 1px;
+                @media screen and (max-width: 470px) {
+                  letter-spacing: 1.05px;
+                }
+              }
+              &:hover {
+                @include buttonwithoutcoloractive($button_active);
+              }
+              @media screen and (max-width: $tablet) {
+                margin-top: -1px;
+              }
+              @media screen and (max-width: 470px) {
+                margin-top: -2px;
+                margin-right: 2px;
+              }
             }
           }
-        }
-        .third_card {
-          @media screen and (max-width: 1000px) {
-            display: none;
+          .third_card {
+            @media screen and (max-width: 1000px) {
+              display: none;
+            }
           }
-        }
-        .second-card {
-          @media screen and (max-width: 550px) {
-            display: none;
+          .second-card {
+            @media screen and (max-width: 550px) {
+              display: none;
+            }
           }
         }
       }

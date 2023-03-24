@@ -10,16 +10,23 @@ function openOrCloseBurger(event) {
   //console.log(event);
   //console.log(window.innerWidth);
   //console.log(typeof window.innerWidth);
-  if (!menu.classList.contains("burger-open") && window.innerWidth<=767) {
+  let styleOfOverlay = getComputedStyle(overlay);
+  if (
+    !menu.classList.contains("burger-open") &&
+    window.innerWidth <= 767 &&
+    styleOfOverlay.display === "none"
+  ) {
     overlay.style.display = "block";
     menu.classList.toggle("burger-open");
     menu.style.right = "0%";
     burgerImage.style.transform = "rotate(90deg)";
+    body.style.overflow = "hidden";
   } else {
     menu.classList.toggle("burger-open");
     overlay.style.display = "none";
     menu.style.right = "-100%";
     burgerImage.style.transform = "rotate(0deg)";
+    body.style.overflow = "auto";
   }
 }
 
