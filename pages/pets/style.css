@@ -20,6 +20,8 @@
 *,
 *:before,
 *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -398,7 +400,7 @@ h6 {
   line-height: 15px;
   letter-spacing: 0.1em;
   color: #292929;
-  padding-left: 3px;
+  padding-left: 4px;
 }
 @media screen and (max-width: 470px) {
   .header .header_container .logo .logo-text {
@@ -458,7 +460,8 @@ h6 {
 .header .menu .menu-list {
   display: flex;
   align-items: center;
-  gap: 38px;
+  gap: 36px;
+  margin-top: -1px;
 }
 @media screen and (max-width: 1199px) {
   .header .menu .menu-list {
@@ -567,6 +570,7 @@ h6 {
   }
 }
 .our-friends .our-friends_container .our-friends_title {
+  margin-left: 2px;
   font-family: "Georgia", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -586,8 +590,7 @@ h6 {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  -moz-column-gap: 40px;
-       column-gap: 40px;
+  column-gap: 40px;
   row-gap: 30px;
 }
 @media screen and (max-width: 1199px) {
@@ -601,8 +604,7 @@ h6 {
 }
 @media screen and (max-width: 768px) {
   .our-friends .our-friends_container .slider_container {
-    -moz-column-gap: 40px;
-         column-gap: 40px;
+    column-gap: 40px;
     grid-row-gap: 30px;
   }
 }
@@ -657,7 +659,7 @@ h6 {
 }
 .our-friends .our-friends_container .slider_container .card .card_button {
   cursor: pointer;
-  padding: 15px 45px;
+  padding: 15px 40px;
   width: 187px;
   height: 52px;
   border: 2px solid #f1cdb3;
@@ -670,6 +672,9 @@ h6 {
   text-align: center;
   color: #292929;
   letter-spacing: 0.06em;
+}
+.our-friends .our-friends_container .slider_container .card .card_button .button_text {
+  letter-spacing: 1.6px;
 }
 .our-friends .our-friends_container .slider_container .card .card_button:hover {
   background-color: #fddcc4;

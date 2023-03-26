@@ -20,6 +20,8 @@
 *,
 *:before,
 *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -392,7 +394,7 @@ h6 {
   line-height: 15px;
   letter-spacing: 0.1em;
   color: #ffffff;
-  padding-left: 3px;
+  padding-left: 4px;
 }
 @media screen and (max-width: 470px) {
   .header .header_container .logo .logo-text {
@@ -451,7 +453,7 @@ h6 {
 .header .header_container .menu .menu-list {
   display: flex;
   align-items: center;
-  gap: 38px;
+  gap: 36px;
 }
 @media screen and (max-width: 767px) {
   .header .header_container .menu .menu-list {
@@ -553,7 +555,7 @@ h6 {
 .not-only .not-only_container .text-block {
   display: flex;
   flex-direction: column;
-  gap: 39px;
+  gap: 38px;
   max-width: 462px;
   margin-top: 166px;
 }
@@ -602,7 +604,6 @@ h6 {
   font-size: 93.75%;
   line-height: 160%;
   color: #cdcdcd;
-  letter-spacing: 0.2px;
 }
 @media screen and (max-width: 767px) {
   .not-only .not-only_container .text-block .not-only-text {
@@ -615,7 +616,7 @@ h6 {
   }
 }
 .not-only .not-only_container .text-block .not-only_button {
-  margin-top: 2px;
+  margin-top: 4px;
   padding: 17px 45px 13px 45px;
   width: 207px;
   height: 52px;
@@ -784,7 +785,6 @@ h6 {
   font-size: 93.75%;
   line-height: 160%;
   color: #4c4c4c;
-  letter-spacing: 0.18px;
 }
 @media screen and (max-width: 767px) {
   .about .about_container .text-block .about-text {
@@ -851,6 +851,7 @@ h6 {
   }
 }
 .our-friends .our-friends_container .our-friends_title {
+  margin-left: 2px;
   font-family: "Georgia", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -1151,7 +1152,7 @@ h6 {
 }
 .our-friends .our-friends_container .our-friends_slider .main-slider-container .slider_container .card .card_button {
   cursor: pointer;
-  padding: 15px 45px;
+  padding: 15px 40px;
   width: 187px;
   height: 52px;
   border: 2px solid #f1cdb3;
@@ -1166,7 +1167,7 @@ h6 {
   letter-spacing: 0.06em;
 }
 .our-friends .our-friends_container .our-friends_slider .main-slider-container .slider_container .card .card_button .button_text {
-  letter-spacing: 1px;
+  letter-spacing: 1.6px;
 }
 @media screen and (max-width: 470px) {
   .our-friends .our-friends_container .our-friends_slider .main-slider-container .slider_container .card .card_button .button_text {
@@ -1292,8 +1293,7 @@ h6 {
 .help .help-container .help-icons_block {
   display: flex;
   flex-wrap: wrap;
-  -moz-column-gap: 120px;
-       column-gap: 120px;
+  column-gap: 120px;
   justify-content: center;
   row-gap: 55px;
 }
@@ -1388,6 +1388,9 @@ h6 {
   .help .help-container .help-icons_block .vitamins .icon-title {
     padding-top: 0px;
   }
+}
+.help .help-container .help-icons_block .collars .icon-title {
+  padding-top: 2px;
 }
 @media screen and (max-width: 1000px) {
   .help .help-container .help-icons_block .collars .icon-title {
