@@ -238,7 +238,7 @@ $mobile: 320px;
   background-color: $button_active;
 }
 @mixin buttonwithoutcolor($color_nav_active, $font_georgia, $button-text) {
-  padding: 15px 45px;
+  padding: 15px 40px;
   width: 187px;
   height: 52px;
   border: 2px solid $color_nav_active;
@@ -471,7 +471,7 @@ $mobile: 320px;
         line-height: 15px;
         letter-spacing: 0.1em;
         color: $color-white;
-        padding-left: 3px;
+        padding-left: 4px;
         @media screen and (max-width: 470px) {
           padding-left: 4px;
           letter-spacing: 0.095em;
@@ -523,7 +523,7 @@ $mobile: 320px;
       .menu-list {
         display: flex;
         align-items: center;
-        gap: 38px;
+        gap: 36px;
         @media screen and (max-width: 767px) {
           flex-direction: column;
           gap: 40px;
@@ -598,7 +598,7 @@ $mobile: 320px;
     .text-block {
       display: flex;
       flex-direction: column;
-      gap: 39px;
+      gap: 38px;
       max-width: 462px;
       margin-top: 166px;
       @media screen and (max-width: 1000px) {
@@ -622,7 +622,7 @@ $mobile: 320px;
       .not-only-text {
         @include p($font_arial);
         color: $color_nav;
-        letter-spacing: 0.2px;
+        //letter-spacing: 0.2px;
         @media screen and (max-width: 767px) {
           text-align: center;
         }
@@ -631,7 +631,7 @@ $mobile: 320px;
         }
       }
       .not-only_button {
-        margin-top: 2px;
+        margin-top: 4px;
         @include buttonwithcolor($color_nav_active, $font_georgia);
         display: block;
         cursor: pointer;
@@ -732,7 +732,7 @@ $mobile: 320px;
       .about-text {
         @include p($font_arial);
         color: $color-p-text;
-        letter-spacing: 0.18px;
+        //letter-spacing: 0.18px;
         @media screen and (max-width: 767px) {
           text-align: justify;
         }
@@ -771,6 +771,7 @@ $mobile: 320px;
     }
     align-items: center;
     .our-friends_title {
+      margin-left: 2px;
       @include h3($font_georgia, $color-dark);
       max-width: 400px;
       text-align: center;
@@ -982,7 +983,7 @@ $mobile: 320px;
                 $button-text
               );
               .button_text {
-                letter-spacing: 1px;
+                letter-spacing: 1.6px;
                 @media screen and (max-width: 470px) {
                   letter-spacing: 1.05px;
                 }
@@ -1129,6 +1130,7 @@ $mobile: 320px;
       }
       .collars {
         .icon-title {
+          padding-top: 2px;
           @media screen and (max-width: 1000px) {
             padding-top: 5px;
           }
