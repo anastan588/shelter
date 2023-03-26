@@ -11,8 +11,10 @@ let randomPetsArray = [];
 let cardsArray = [];
 let numberOfActiveCards = 0;
 let countOfeventNumber = 0;
+let countEventsForNoRepearting = 0;
 let element = "";
 let previousContainerCardsInSave = [];
+let previousButtonInSave = "";
 
 function getRandonArrayOfPets() {
   let petsArray = [];
@@ -89,6 +91,7 @@ function countOfevent(event) {
   //console.log(element);
   let type = event.type;
   let currenteventelement = this;
+  previousButtonInSave = this;
   if (
     element !== "" &&
     element.classList.contains("right") &&
@@ -103,12 +106,30 @@ function countOfevent(event) {
   ) {
     countOfeventNumber = 1;
     element = currenteventelement;
+  } else if (
+    countOfeventNumber === 1 &&
+    currenteventelement.classList.contains("right") &&
+    previousButtonInSave.classList.contains("right")
+  ) {
+    countEventsForNoRepearting = 1;
+    element = currenteventelement;
+    countOfeventNumber = 0;
+  } else if (
+    countOfeventNumber === 1 &&
+    currenteventelement.classList.contains("left") &&
+    previousButtonInSave.classList.contains("left")
+  ) {
+    countEventsForNoRepearting = 1;
+    element = currenteventelement;
+    countOfeventNumber = 0;
   } else {
+    countEventsForNoRepearting = 0;
     element = currenteventelement;
     countOfeventNumber = 0;
   }
-  //console.log(element);
-  //console.log(countOfeventNumber);
+  console.log(element);
+  console.log(countOfeventNumber);
+  console.log(countEventsForNoRepearting);
   return countOfeventNumber;
 }
 
@@ -167,6 +188,14 @@ function makeNewSlide(nextSlider) {
           cardsCollectionNew[numberOfActiveCards - 1].children[1].textContent
       ) {
         for (let k = 1; k <= numberOfActiveCards; k++) {
+          console.log(i);
+          if (countEventsForNoRepearting === 1) {
+            i = i + 1;
+            if (i === randomPetsArray.length - 3) {
+              i = i - 3;
+            }
+          }
+          console.log(i);
           let j = i + k;
           if (j > randomPetsArray.length - 1) {
             j = 0;
@@ -189,7 +218,6 @@ function makeNewSlide(nextSlider) {
       }
     }
   }
-
   console.log(nextSlider);
   console.log(previousContainerCardsInSave);
   return nextSlider;
