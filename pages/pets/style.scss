@@ -138,8 +138,10 @@ $color-arrows-blind: #cdcdcd;
 $burger-color: rgba(41, 41, 41, 0.7);
 $overlay-color: rgba(41, 41, 41, 0.4);
 $color-popup: #000000;
-$background_gradient: url(../../assets/images/start-screen-gradient-background.png),
+$background_gradient_header: url(../../assets/images/start-screen-gradient-background.png),
   radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%) #211f20;
+$background_gradient_footer: url(../../assets/images/start-screen-gradient-background.png),
+  radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%) #211F20;
 $tablet: 768px;
 $mobile: 320px;
 /*variables*/
@@ -522,7 +524,7 @@ $mobile: 320px;
         gap: 40px;
       }
       .menu-item {
-        transition: all 0.5s ease;
+        transition: all 0.3s ease;
         &:hover {
           transform: scale(1.05);
         }
@@ -762,7 +764,7 @@ $mobile: 320px;
 }
 
 .footer {
-  background: $background_gradient;
+  background: $background_gradient_footer;
   background-size: cover;
   .footer-container {
     padding-top: 40px;
