@@ -463,7 +463,7 @@ h6 {
 }
 .header .header_container .menu .menu-list .menu-item {
   margin-top: -4px;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 .header .header_container .menu .menu-list .menu-item:hover {
   transform: scale(1.05);
@@ -1458,7 +1458,7 @@ h6 {
   }
 }
 .inAddition .inAddition-container .inAddition-image {
-  margin-top: -3px;
+  margin-top: -2px;
   align-self: center;
 }
 @media screen and (max-width: 1000px) {
@@ -1627,7 +1627,7 @@ h6 {
 }
 
 .footer {
-  background: url(../../assets/images/start-screen-gradient-background.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%) #211f20;
+  background: url(../../assets/images/start-screen-gradient-background.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%) #211F20;
   background-size: cover;
 }
 .footer .footer-container {
@@ -1771,8 +1771,11 @@ h6 {
     letter-spacing: 0.06em;
   }
 }
+.footer .footer-container .contacts-block .contacts1 {
+  margin-top: 2px;
+}
 .footer .footer-container .contacts-block .contacts2 {
-  margin-top: 6px;
+  margin-top: 5px;
 }
 @media screen and (max-width: 1000px) {
   .footer .footer-container .contacts-block .contacts2 {

@@ -140,8 +140,10 @@ $button-text: #292929;
 $burger-color: rgba(41, 41, 41, 0.7);
 $overlay-color: rgba(41, 41, 41, 0.4);
 $color-popup: #000000;
-$background_gradient: url(../../assets/images/start-screen-gradient-background.png),
+$background_gradient_header: url(../../assets/images/start-screen-gradient-background.png),
   radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%) #211f20;
+$background_gradient_footer: url(../../assets/images/start-screen-gradient-background.png),
+  radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%) #211F20;
 $background_grey: #f6f6f6;
 $tablet: 768px;
 $mobile: 320px;
@@ -530,7 +532,7 @@ $mobile: 320px;
         }
         .menu-item {
           margin-top: -4px;
-          transition: all 0.5s ease;
+          transition: all 0.3s ease;
           &:hover {
             transform: scale(1.05);
           }
@@ -576,7 +578,7 @@ $mobile: 320px;
   @media screen and (max-width: $tablet) {
     margin-top: -150px;
   }
-  background: $background_gradient;
+  background: $background_gradient_header;
   background-size: cover;
   .not-only_container {
     @include container($container);
@@ -1173,7 +1175,7 @@ $mobile: 320px;
       gap: 42px;
     }
     .inAddition-image {
-      margin-top: -3px;
+      margin-top: -2px;
       align-self: center;
       @media screen and (max-width: 1000px) {
         width: auto;
@@ -1298,7 +1300,7 @@ $mobile: 320px;
 }
 
 .footer {
-  background: $background_gradient;
+  background: $background_gradient_footer;
   background-size: cover;
   .footer-container {
     padding-top: 40px;
@@ -1385,9 +1387,10 @@ $mobile: 320px;
         }
       }
       .contacts1 {
+        margin-top: 2px;
       }
       .contacts2 {
-        margin-top: 6px;
+        margin-top: 5px;
         @media screen and (max-width: 1000px) {
           margin-top: 2px;
         }
