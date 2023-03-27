@@ -20,8 +20,6 @@
 *,
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -590,7 +588,8 @@ h6 {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  column-gap: 40px;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
   row-gap: 30px;
 }
 @media screen and (max-width: 1199px) {
@@ -604,7 +603,8 @@ h6 {
 }
 @media screen and (max-width: 768px) {
   .our-friends .our-friends_container .slider_container {
-    column-gap: 40px;
+    -moz-column-gap: 40px;
+         column-gap: 40px;
     grid-row-gap: 30px;
   }
 }
@@ -633,6 +633,7 @@ h6 {
 .our-friends .our-friends_container .slider_container .card:hover {
   background-color: #ffffff;
   transform: scale(1.03);
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 .our-friends .our-friends_container .slider_container .card:hover .card_button {
   background-color: #fddcc4;

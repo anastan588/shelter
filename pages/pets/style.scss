@@ -634,6 +634,7 @@ $mobile: 320px;
         &:hover {
           background-color: $color-white;
           transform: scale(1.03);
+          box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
         }
 
         &:hover .card_button {
