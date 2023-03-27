@@ -20,8 +20,6 @@
 *,
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -935,7 +933,6 @@ h6 {
 .our-friends .our-friends_container .our-friends_slider .main-slider-container {
   display: flex;
   box-sizing: border-box;
-  overflow: hidden;
   max-width: 990px;
   transition: all 1s ease;
 }
@@ -1120,6 +1117,7 @@ h6 {
 .our-friends .our-friends_container .our-friends_slider .main-slider-container .slider_container .card:hover {
   background-color: #ffffff;
   transform: scale(1.03);
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 .our-friends .our-friends_container .our-friends_slider .main-slider-container .slider_container .card:hover .card_button {
   background-color: #fddcc4;
@@ -1293,7 +1291,8 @@ h6 {
 .help .help-container .help-icons_block {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 120px;
+  -moz-column-gap: 120px;
+       column-gap: 120px;
   justify-content: center;
   row-gap: 55px;
 }
