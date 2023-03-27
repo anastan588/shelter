@@ -933,7 +933,6 @@ h6 {
 .our-friends .our-friends_container .our-friends_slider .main-slider-container {
   display: flex;
   box-sizing: border-box;
-  overflow: hidden;
   max-width: 990px;
   transition: all 1s ease;
 }

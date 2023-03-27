@@ -839,7 +839,7 @@ $mobile: 320px;
       .main-slider-container {
         display: flex;
         box-sizing: border-box;
-        overflow: hidden;
+        // overflow: hidden;
         max-width: 990px;
         transition: all 1s ease;
         @media screen and (max-width: 1199px) {
