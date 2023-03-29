@@ -1737,6 +1737,15 @@ h6 {
   gap: 20px;
   align-items: center;
 }
+.footer .footer-container .contacts-block .contacts-item .footer-link-image {
+  display: block;
+}
+.footer .footer-container .contacts-block .contacts-item .footer-link-image .item-icon {
+  transition: all 0.5s ease;
+}
+.footer .footer-container .contacts-block .contacts-item .footer-link-image .item-icon:hover {
+  transform: scale(1.05);
+}
 .footer .footer-container .contacts-block .contacts-item .item-text {
   font-family: "Georgia", sans-serif;
   font-style: normal;
