@@ -825,8 +825,15 @@ $mobile: 320px;
         display: flex;
         gap: 20px;
         align-items: center;
-        .item-icon {
-        }
+        .footer-link-image {
+          display:block;
+           .item-icon {
+            transition: all 0.5s ease;
+            &:hover {
+              transform: scale(1.1);
+            }
+           }
+         }
 
         .item-text {
           @include h4($font_georgia, $color-dark);
