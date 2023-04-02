@@ -20,6 +20,8 @@
 *,
 *:before,
 *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -588,8 +590,7 @@ h6 {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  -moz-column-gap: 40px;
-       column-gap: 40px;
+  column-gap: 40px;
   row-gap: 30px;
 }
 @media screen and (max-width: 1199px) {
@@ -603,8 +604,7 @@ h6 {
 }
 @media screen and (max-width: 768px) {
   .our-friends .our-friends_container .slider_container {
-    -moz-column-gap: 40px;
-         column-gap: 40px;
+    column-gap: 40px;
     grid-row-gap: 30px;
   }
 }
@@ -731,9 +731,6 @@ h6 {
   width: 52px;
   border: solid 2px #cdcdcd;
   border-radius: 100px;
-}
-.our-friends .our-friends_container .arrows_container .slider_arrow_blind:hover {
-  pointer-events: none;
 }
 .our-friends .our-friends_container .arrows_container .slider_number_arrow {
   display: flex;

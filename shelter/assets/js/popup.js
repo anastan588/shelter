@@ -134,4 +134,4 @@ function closePopUp(event) {
 
 cardsContainer.addEventListener("click", openPopUp);
 overlay.addEventListener("click", closePopUp);
-mainSliderContainer.addEventListener("DOMNodeInserted", updateCardsContainer);
+// mainSliderContainer.addEventListener("DOMNodeInserted", updateCardsContainer);

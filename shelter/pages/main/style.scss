@@ -143,7 +143,8 @@ $color-popup: #000000;
 $background_gradient_header: url(../../assets/images/start-screen-gradient-background.png),
   radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%) #211f20;
 $background_gradient_footer: url(../../assets/images/start-screen-gradient-background.png),
-  radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%) #211F20;
+  radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%)
+    #211f20;
 $background_grey: #f6f6f6;
 $tablet: 768px;
 $mobile: 320px;
@@ -510,6 +511,7 @@ $mobile: 320px;
       box-sizing: border-box;
       transition: all 1s ease;
       @media screen and (max-width: 767px) {
+        display: none;
         align-items: flex-start;
         position: absolute;
         right: -100%;
@@ -607,14 +609,13 @@ $mobile: 320px;
         margin-top: 0px;
         flex-grow: 2;
       }
-      @media screen and (max-width: 767px) {
-        align-items: center;
-      }
+
       .not-only-title {
         max-width: 310px;
         @include h2($font_georgia, $color-white);
         @media screen and (max-width: 767px) {
           text-align: center;
+          align-self: center;
         }
         @media screen and (max-width: 470px) {
           max-width: 200px;
@@ -629,7 +630,7 @@ $mobile: 320px;
           text-align: center;
         }
         @media screen and (max-width: 470px) {
-          letter-spacing: 0.2px;
+          letter-spacing: 0.1px;
         }
       }
       .not-only_button {
@@ -648,14 +649,14 @@ $mobile: 320px;
           margin-right: 2px;
         }
         @media screen and (max-width: 470px) {
-          margin-top: 3px;
+          margin-top: 5px;
         }
       }
     }
     .not-only_image {
       @media screen and (max-width: 1199px) {
         height: auto;
-        width: 70%;
+        width: 58.17%;
       }
       @media screen and (max-width: 1000px) {
         align-self: flex-end;
@@ -724,6 +725,7 @@ $mobile: 320px;
       .about-title {
         @include h3($font_georgia, $color-dark);
         max-width: 370px;
+
         @media screen and (max-width: 767px) {
           text-align: center;
         }
@@ -839,7 +841,7 @@ $mobile: 320px;
       .main-slider-container {
         display: flex;
         box-sizing: border-box;
-        // overflow: hidden;
+        overflow: hidden;
         max-width: 990px;
         transition: all 1s ease;
         @media screen and (max-width: 1199px) {
@@ -911,7 +913,7 @@ $mobile: 320px;
         @media screen and (max-width: 605px) {
           max-width: 540px;
         }
-         @media screen and (max-width: 600px) {
+        @media screen and (max-width: 600px) {
           max-width: 535px;
         }
         @media screen and (max-width: 590px) {
@@ -929,7 +931,7 @@ $mobile: 320px;
         @media screen and (max-width: 550px) {
           max-width: 270px;
         }
-        
+
         @media screen and (max-width: 767px) {
           grid-column-start: 1;
           grid-column-end: 3;
@@ -985,10 +987,13 @@ $mobile: 320px;
                 $font_georgia,
                 $button-text
               );
+              @media screen and (max-width: 470px) {
+                padding-right: 35px;
+              }
               .button_text {
                 letter-spacing: 1.6px;
                 @media screen and (max-width: 470px) {
-                  letter-spacing: 1.05px;
+                  // letter-spacing: 1px;
                 }
               }
               &:hover {
@@ -1361,16 +1366,16 @@ $mobile: 320px;
         display: flex;
         gap: 20px;
         align-items: center;
-         .footer-link-image {
-          display:block;
-           .item-icon {
+        .footer-link-image {
+          display: block;
+          .item-icon {
             transition: all 0.5s ease;
             &:hover {
               transform: scale(1.1);
             }
-           }
-         }
-        
+          }
+        }
+
         .item-text {
           @include h4($font_georgia, $color-dark);
           line-height: 115%;
@@ -1399,7 +1404,7 @@ $mobile: 320px;
       .contacts2 {
         margin-top: 5px;
         @media screen and (max-width: 1000px) {
-          margin-top: 2px;
+          margin-top: 6px;
         }
       }
       .contacts3 {
@@ -1416,6 +1421,13 @@ $mobile: 320px;
         }
       }
     }
+
+    .block1 {
+      @media screen and (max-width: 1000px) {
+        gap: 37px; 
+      }
+    }
+
     .block2 {
       margin-right: 23px;
       gap: 29px;
@@ -1429,14 +1441,14 @@ $mobile: 320px;
         gap: 39px;
       }
     }
-     
+
     .footer-image {
       @media screen and (max-width: 1000px) {
         height: auto;
         width: auto;
         margin: 0 auto;
       }
-      @media screen and (max-width: 470px) {
+      @media screen and (max-width: 767px) {
         width: 81.25%;
         margin-top: -1px;
       }
