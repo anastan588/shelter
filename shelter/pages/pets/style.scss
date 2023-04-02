@@ -668,17 +668,17 @@ $mobile: 320px;
       }
 
       .four-card {
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 650px) {
           display: none;
         }
       }
       .five-card {
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 650px) {
           display: none;
         }
       }
       .six-card {
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 650px) {
           display: none;
         }
       }
@@ -905,7 +905,7 @@ $mobile: 320px;
         width: auto;
         margin: 0 auto;
       }
-      @media screen and (max-width: 470px) {
+      @media screen and (max-width: 767px) {
         width: 81.25%;
         margin-top: -1px;
       }

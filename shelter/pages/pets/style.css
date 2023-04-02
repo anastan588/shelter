@@ -681,17 +681,17 @@ h6 {
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 650px) {
   .our-friends .our-friends_container .slider_container .four-card {
     display: none;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 650px) {
   .our-friends .our-friends_container .slider_container .five-card {
     display: none;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 650px) {
   .our-friends .our-friends_container .slider_container .six-card {
     display: none;
   }
@@ -981,7 +981,7 @@ h6 {
     margin: 0 auto;
   }
 }
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 767px) {
   .footer .footer-container .footer-image {
     width: 81.25%;
     margin-top: -1px;
