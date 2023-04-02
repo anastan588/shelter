@@ -499,6 +499,7 @@ $mobile: 320px;
     box-sizing: border-box;
     transition: all 1s ease;
     @media screen and (max-width: 767px) {
+      display: none;
       align-items: flex-start;
       position: absolute;
       right: -100%;
