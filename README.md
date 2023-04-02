@@ -1,2 +1,2 @@
 # shelter
-#### https://anastan588.github.io/shelter/pages/main/
+#### https://anastan588.github.io/shelter/shelter/pages/main/
