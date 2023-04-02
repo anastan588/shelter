@@ -20,6 +20,8 @@
 *,
 *:before,
 *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -435,6 +437,7 @@ h6 {
 }
 @media screen and (max-width: 767px) {
   .header .header_container .menu {
+    display: none;
     align-items: flex-start;
     position: absolute;
     right: -100%;
@@ -563,11 +566,6 @@ h6 {
     flex-grow: 2;
   }
 }
-@media screen and (max-width: 767px) {
-  .not-only .not-only_container .text-block {
-    align-items: center;
-  }
-}
 .not-only .not-only_container .text-block .not-only-title {
   max-width: 310px;
   font-family: "Georgia", sans-serif;
@@ -587,6 +585,7 @@ h6 {
 @media screen and (max-width: 767px) {
   .not-only .not-only_container .text-block .not-only-title {
     text-align: center;
+    align-self: center;
   }
 }
 @media screen and (max-width: 470px) {
@@ -610,7 +609,7 @@ h6 {
 }
 @media screen and (max-width: 470px) {
   .not-only .not-only_container .text-block .not-only-text {
-    letter-spacing: 0.2px;
+    letter-spacing: 0.1px;
   }
 }
 .not-only .not-only_container .text-block .not-only_button {
@@ -643,13 +642,13 @@ h6 {
 }
 @media screen and (max-width: 470px) {
   .not-only .not-only_container .text-block .not-only_button {
-    margin-top: 3px;
+    margin-top: 5px;
   }
 }
 @media screen and (max-width: 1199px) {
   .not-only .not-only_container .not-only_image {
     height: auto;
-    width: 70%;
+    width: 58.17%;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -933,6 +932,7 @@ h6 {
 .our-friends .our-friends_container .our-friends_slider .main-slider-container {
   display: flex;
   box-sizing: border-box;
+  overflow: hidden;
   max-width: 990px;
   transition: all 1s ease;
 }
@@ -1164,13 +1164,13 @@ h6 {
   color: #292929;
   letter-spacing: 0.06em;
 }
+@media screen and (max-width: 470px) {
+  .our-friends .our-friends_container .our-friends_slider .main-slider-container .slider_container .card .card_button {
+    padding-right: 35px;
+  }
+}
 .our-friends .our-friends_container .our-friends_slider .main-slider-container .slider_container .card .card_button .button_text {
   letter-spacing: 1.6px;
-}
-@media screen and (max-width: 470px) {
-  .our-friends .our-friends_container .our-friends_slider .main-slider-container .slider_container .card .card_button .button_text {
-    letter-spacing: 1.05px;
-  }
 }
 .our-friends .our-friends_container .our-friends_slider .main-slider-container .slider_container .card .card_button:hover {
   background-color: #fddcc4;
@@ -1291,8 +1291,7 @@ h6 {
 .help .help-container .help-icons_block {
   display: flex;
   flex-wrap: wrap;
-  -moz-column-gap: 120px;
-       column-gap: 120px;
+  column-gap: 120px;
   justify-content: center;
   row-gap: 55px;
 }
@@ -1626,7 +1625,7 @@ h6 {
 }
 
 .footer {
-  background: url(../../assets/images/start-screen-gradient-background.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%) #211F20;
+  background: url(../../assets/images/start-screen-gradient-background.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%) #211f20;
   background-size: cover;
 }
 .footer .footer-container {
@@ -1787,7 +1786,7 @@ h6 {
 }
 @media screen and (max-width: 1000px) {
   .footer .footer-container .contacts-block .contacts2 {
-    margin-top: 2px;
+    margin-top: 6px;
   }
 }
 .footer .footer-container .contacts-block .contacts4 {
@@ -1803,6 +1802,11 @@ h6 {
     margin-right: 0px;
     align-self: flex-start;
     margin-top: 0px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .footer .footer-container .block1 {
+    gap: 37px;
   }
 }
 .footer .footer-container .block2 {
@@ -1829,7 +1833,7 @@ h6 {
     margin: 0 auto;
   }
 }
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 767px) {
   .footer .footer-container .footer-image {
     width: 81.25%;
     margin-top: -1px;
