@@ -487,7 +487,7 @@ $mobile: 320px;
     .burger-item {
       width: 30px;
       height: 2px;
-      background-color: $color_nav_active;
+      background-color: $color-popup;
     }
     @media screen and (max-width: 470px) {
       gap: 8px;
