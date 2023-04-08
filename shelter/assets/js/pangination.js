@@ -142,6 +142,31 @@ function fillCards() {
   changeColorOfArrows(currentPageButtonNew);
 }
 
+function fillCardsOfEnd() {
+  let cardsCollectionNew = document.querySelectorAll(".card");
+  // console.log(cardsCollectionNew);
+  for (let j = pets.length - 1; j >= pets.length - numberOfActiveCards; j--) {
+    let delta = pets.length - numberOfActiveCards;
+    // console.log(delta);
+    for (let k = 0; k < pets.length; k++) {
+      // console.log(randomPetsArray[randomPetsArray.length - 1][j]);
+      // console.log(randomPetsArray[randomPetsArray.length - 1][j] === pets[k].name);
+      if (randomPetsArray[randomPetsArray.length - 1][j] === pets[k].name) {
+        // console.log(cardsCollectionNew[j - delta]);
+        cardsCollectionNew[j - delta].firstElementChild.src =
+          pets[k].imgforcards;
+        cardsCollectionNew[j - delta].children[1].textContent = pets[k].name;
+        // console.log(cardsCollectionNew[j - delta]);
+      }
+    }
+  }
+
+  currentPageButtonNew = currentPageButton;
+  currentPageButtonNew.textContent = 48 / numberOfActiveCards;
+  console.log(numberOfEndPage);
+  changeColorOfArrows(currentPageButtonNew);
+}
+
 function getDefaultContainer() {
   let cardsCurrentContainer = document.querySelector(".slider_container");
   if (
@@ -243,6 +268,19 @@ function changeColorOfArrows(currentPageButtonNew) {
     rightArrowButton.style.cursor = "not-allowed";
     rightArrowButtonInnerText.src = "../../assets/icons/arrowpetsblindone.png";
     rightArrowButtonInnerText.style.rotate = "180deg";
+    startLeftArrowButton.style.pointerEvents = "auto";
+    startLeftArrowButton.style.backgroundColor = "#f6f6f6";
+    startLeftArrowButton.style.borderColor = "#f1cdb3";
+    startLeftArrowButton.style.cursor = "pointer";
+    startLeftArrowButtonInnerText.src =
+      "../../assets/icons/arrowpetsdarktwo.png";
+    startLeftArrowButtonInnerText.style.rotate = "180deg";
+    leftArrowButton.style.pointerEvents = "auto";
+    leftArrowButton.style.backgroundColor = "#f6f6f6";
+    leftArrowButton.style.borderColor = "#f1cdb3";
+    leftArrowButton.style.cursor = "pointer";
+    leftArrowButtonInnerText.src = "../../assets/icons/arrowpetsdarkone.png";
+    leftArrowButtonInnerText.style.rotate = "180deg";
   } else {
     startLeftArrowButton.style.pointerEvents = "auto";
     startLeftArrowButton.style.backgroundColor = "#f6f6f6";
@@ -263,11 +301,17 @@ function changeColorOfArrows(currentPageButtonNew) {
     endRightArrowButton.style.cursor = "pointer";
     endRightArrowButtonInnerText.src =
       "../../assets/icons/arrowpetsdarktwo.png";
+    if (endRightArrowButtonInnerText.style.rotate === "180deg") {
+      endRightArrowButtonInnerText.style.rotate = "0deg";
+    }
     rightArrowButton.style.pointerEvents = "auto";
     rightArrowButton.style.backgroundColor = "#f6f6f6";
     rightArrowButton.style.borderColor = "#f1cdb3";
     rightArrowButton.style.cursor = "pointer";
     rightArrowButtonInnerText.src = "../../assets/icons/arrowpetsdarkone.png";
+    if (rightArrowButtonInnerText.style.rotate === "180deg") {
+      rightArrowButtonInnerText.style.rotate = "0deg";
+    }
   }
 }
 
@@ -365,7 +409,7 @@ function makeNewSlideRight(nextSlider) {
   let cardsCollectionNew = document.querySelectorAll(".card");
   let cardsContainer = document.querySelector(".slider_container");
   currentPageButtonNew = document.querySelector(".number");
-  console.log(cardsCollectionNew);
+  // console.log(cardsCollectionNew);
   // console.log(cardsContainer);
   // console.log(numberOfEndPage);
   nextSlider = cardsContainer.cloneNode(true);
@@ -383,7 +427,8 @@ function makeNewSlideRight(nextSlider) {
     (currentNumberPage % 2 !== 0 ||
       currentNumberPage === 12 ||
       currentNumberPage === 10 ||
-      currentNumberPage === 4 || currentNumberPage === 2 )
+      currentNumberPage === 4 ||
+      currentNumberPage === 2)
   ) {
     currentNumberI = Math.ceil(
       (numberOfActiveCards * currentNumberPage) / pets.length
@@ -397,7 +442,7 @@ function makeNewSlideRight(nextSlider) {
     currentNumberI = currentNumberI - 1;
   }
 
-  console.log(currentNumberI);
+  // console.log(currentNumberI);
   // console.log(
   //   numberOfActiveCards === 3 &&
   //     numberOfActiveCards !== nextSlider.children.length &&
@@ -456,8 +501,8 @@ function makeNewSlideRight(nextSlider) {
             j = j - 1;
             // console.log(j);
           }
-          console.log(i);
-          console.log(j);
+          // console.log(i);
+          // console.log(j);
           // console.log(randomPetsArray[i][j]);
           for (let k = 0; k < pets.length; k++) {
             if (randomPetsArray[i][j] === pets[k].name) {
@@ -505,3 +550,5 @@ window.addEventListener("resize", getDefaultContainer);
 window.addEventListener("resize", fillCards);
 rightArrowButton.addEventListener("click", moveSlideLeft);
 leftArrowButton.addEventListener("click", moveSlideRight);
+startLeftArrowButton.addEventListener("click", fillCards);
+endRightArrowButton.addEventListener("click", fillCardsOfEnd);
