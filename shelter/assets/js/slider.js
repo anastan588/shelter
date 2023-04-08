@@ -23,9 +23,9 @@ function getRandonArrayOfPets() {
     petsArray.push(pets[i].name);
   }
   // console.log(petsArray);
-  //randomPetsArray = petsArray.sort(() => Math.random() - 0.5);
-  randomPetsArray = petsArray;
-  //console.log(randomPetsArray);
+  randomPetsArray = petsArray.sort(() => Math.random() - 0.5);
+  // randomPetsArray = petsArray;
+  console.log(randomPetsArray);
   return randomPetsArray;
 }
 
@@ -148,7 +148,7 @@ function makeNewSlide(nextSlider) {
   console.log(previousContainerCardsInSave);
   //console.log(secondPreviuosCardsInSave);
   if (countOfeventNumber === 1) {
-    console.log(numberOfActiveCards);
+    // console.log(numberOfActiveCards);
     if (
       numberOfActiveCards === 2 &&
       numberOfActiveCards !== nextSlider.children.length
@@ -164,8 +164,8 @@ function makeNewSlide(nextSlider) {
       previousContainerCardsInSave.pop();
       previousContainerCardsInSave.pop();
     }
-    console.log(nextSlider);
-    console.log(previousContainerCardsInSave);
+    // console.log(nextSlider);
+    // console.log(previousContainerCardsInSave);
     for (let i = 0; i < previousContainerCardsInSave.length; i++) {
       for (let m = 0; m < pets.length; m++) {
         if (previousContainerCardsInSave[i] === pets[m].name) {
@@ -256,7 +256,7 @@ function makeNewSlide(nextSlider) {
           //console.log(countSameCards);
           console.log(countSameCardsNumber);
           if (countSameCardsNumber > 0 && countEventsForNoRepearting === 1) {
-            let randomNumber = j+1;
+            let randomNumber = j + 1;
             if (randomNumber > randomPetsArray.length - 1) {
               randomNumber = 0;
             }
