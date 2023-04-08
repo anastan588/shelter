@@ -435,7 +435,6 @@ h6 {
 }
 @media screen and (max-width: 767px) {
   .header .header_container .menu {
-    display: none;
     align-items: flex-start;
     position: absolute;
     right: -100%;
