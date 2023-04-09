@@ -541,6 +541,7 @@ $mobile: 320px;
           &:first-child {
             @include navactive($color_nav_active);
             transform: none;
+            pointer-events: none;
             a {
               pointer-events: none;
               @include navhover($color_nav_hover);

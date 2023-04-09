@@ -555,6 +555,7 @@ $mobile: 320px;
         }
       }
       .active {
+        pointer-events: none;
         &:hover {
           transform: none;
         }

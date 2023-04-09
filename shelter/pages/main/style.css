@@ -471,6 +471,7 @@ h6 {
 .header .header_container .menu .menu-list .menu-item:first-child {
   border-bottom: solid 3px #f1cdb3;
   transform: none;
+  pointer-events: none;
 }
 .header .header_container .menu .menu-list .menu-item:first-child a {
   pointer-events: none;

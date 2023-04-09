@@ -86,7 +86,7 @@ function getRandomCardsArray() {
       freddie++;
     }
   }
-  console.log(katrine,jennnifer,woody,sohia,charly,timmy,scarlett,freddie);
+  // console.log(katrine,jennnifer,woody,sohia,charly,timmy,scarlett,freddie);
   let namesArrayPart2 = [...namesArray].reverse();
   // console.log(namesArray);
   // console.log(namesArrayPart2);
@@ -138,7 +138,7 @@ function fillCards() {
   }
   currentPageButtonNew = currentPageButton;
   currentPageButtonNew.textContent = "1";
-  console.log(numberOfEndPage);
+  // console.log(numberOfEndPage);
   changeColorOfArrows(currentPageButtonNew);
 }
 
@@ -199,7 +199,7 @@ function receiveNumberOfActiveCards(event) {
     }
     numberOfActiveCards = cardsArray.length;
     //console.log(cardsArray);
-    console.log(numberOfActiveCards);
+    // console.log(numberOfActiveCards);
     receiveNumberOfEndPage();
     return numberOfActiveCards;
   }, 100);
@@ -212,7 +212,7 @@ function receiveNumberOfEndPage(event) {
 
 function changeColorOfArrows(currentPageButtonNew) {
   if (currentPageButtonNew.textContent === "1") {
-    console.log(currentPageButtonNew.textContent === "1");
+    // console.log(currentPageButtonNew.textContent === "1");
     startLeftArrowButton.style.pointerEvents = "none";
     startLeftArrowButton.style.backgroundColor = "#f6f6f6";
     startLeftArrowButton.style.borderColor = "#cdcdcd";
@@ -252,9 +252,9 @@ function changeColorOfArrows(currentPageButtonNew) {
       rightArrowButtonInnerText.style.rotate = "0deg";
     }
   } else if (currentPageButtonNew.textContent === numberOfEndPage.toString()) {
-    console.log(
-      currentPageButtonNew.textContent === numberOfEndPage.toString()
-    );
+    // console.log(
+    //   currentPageButtonNew.textContent === numberOfEndPage.toString()
+    // );
     endRightArrowButton.style.pointerEvents = "none";
     endRightArrowButton.style.backgroundColor = "#f6f6f6";
     endRightArrowButton.style.borderColor = "#cdcdcd";
@@ -543,7 +543,7 @@ function moveSlideRight() {
 
 getRandomCardsArray();
 fillCards();
-console.log(cardsCollection);
+// console.log(cardsCollection);
 window.addEventListener("load", receiveNumberOfActiveCards);
 window.addEventListener("resize", receiveNumberOfActiveCards);
 window.addEventListener("resize", getDefaultContainer);

@@ -509,6 +509,7 @@ h6 {
   }
 }
 .header .menu .menu-list .active {
+  pointer-events: none;
   border-bottom: solid 3px #f1cdb3;
   color: #545454;
 }
