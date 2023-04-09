@@ -145,7 +145,7 @@ function makeNewSlide(nextSlider) {
 
   nextSlider = cardsContainer.cloneNode(true);
   //console.log(nextSlider);
-  console.log(previousContainerCardsInSave);
+  // console.log(previousContainerCardsInSave);
   //console.log(secondPreviuosCardsInSave);
   if (countOfeventNumber === 1) {
     // console.log(numberOfActiveCards);
@@ -162,6 +162,13 @@ function makeNewSlide(nextSlider) {
       nextSlider.lastElementChild.remove();
       nextSlider.lastElementChild.remove();
       previousContainerCardsInSave.pop();
+      previousContainerCardsInSave.pop();
+    } else if (
+      previousContainerCardsInSave.length > numberOfActiveCards &&
+      numberOfActiveCards === 2 &&
+      previousContainerCardsInSave.length === 3
+    ) {
+      console.log("ghbdtn");
       previousContainerCardsInSave.pop();
     }
     // console.log(nextSlider);
@@ -211,6 +218,7 @@ function makeNewSlide(nextSlider) {
         nextSlider.lastElementChild.children[1].textContent ===
           cardsCollectionNew[numberOfActiveCards - 1].children[1].textContent
       ) {
+        
         for (let k = 1; k <= numberOfActiveCards; k++) {
           let countSameCards = [];
           let countSameCardsNumber = 0;
@@ -254,23 +262,32 @@ function makeNewSlide(nextSlider) {
           }
           //console.log(nextSlider);
           //console.log(countSameCards);
-          console.log(countSameCardsNumber);
+          // console.log(countSameCardsNumber);
           if (countSameCardsNumber > 0 && countEventsForNoRepearting === 1) {
+            // console.log(j);
             let randomNumber = j + 1;
             if (randomNumber > randomPetsArray.length - 1) {
               randomNumber = 0;
             }
-            console.log(randomNumber);
-            nextSlider.children[k - 1].firstElementChild.src =
-              pets[randomNumber].imgforcards;
-            nextSlider.children[k - 1].children[1].textContent =
-              pets[randomNumber].name;
+            // console.log(randomNumber);
+            for (let m = 0; m < pets.length; m++) {
+              if (randomPetsArray[randomNumber] === pets[m].name) {
+                nextSlider.children[k - 1].firstElementChild.src =
+                  pets[m].imgforcards;
+                nextSlider.children[k - 1].children[1].textContent =
+                  pets[m].name;
+                // nextSlider.children[k - 1].firstElementChild.src =
+                //   pets[randomNumber].imgforcards;
+                // nextSlider.children[k - 1].children[1].textContent =
+                //   pets[randomNumber].name;
+              }
+            }
           }
         }
       }
     }
   }
-  console.log(previousContainerCardsInSave);
+  // console.log(previousContainerCardsInSave);
   if (previousContainerCardsInSave !== []) {
     secondPreviuosCardsInSave = [...previousContainerCardsInSave];
     //console.log(secondPreviuosCardsInSave);

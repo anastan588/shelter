@@ -30,7 +30,7 @@ function getRandomCardsArray() {
   for (let j = 0; j < pets.length; j++) {
     //   console.log(pets[j].name);
     names.push(pets[j].name);
-    //   console.log(names);
+      // console.log(names);
   }
   namesArray = names.sort(() => Math.random() - 0.5);
   // console.log(namesArray);
@@ -58,7 +58,7 @@ function getRandomCardsArray() {
   for (let i = 0; i < fourthPartOfArray.length; i++) {
     namesArray.push(fourthPartOfArray[i]);
   }
-  // console.log(namesArray);
+  console.log(namesArray);
   let katrine = 0;
   let jennnifer = 0;
   let woody = 0;
@@ -98,7 +98,7 @@ function getRandomCardsArray() {
     let subArray = [];
 
     subArray = resultArray.slice(start, end);
-    // console.log(subArray);
+    console.log(subArray);
     start = start + 8;
     end = start + 8;
     randomPetsArray.push(subArray);
@@ -138,7 +138,7 @@ function fillCards() {
   }
   currentPageButtonNew = currentPageButton;
   currentPageButtonNew.textContent = "1";
-  console.log(numberOfEndPage);
+  // console.log(numberOfEndPage);
   changeColorOfArrows(currentPageButtonNew);
 }
 
@@ -199,7 +199,7 @@ function receiveNumberOfActiveCards(event) {
     }
     numberOfActiveCards = cardsArray.length;
     //console.log(cardsArray);
-    console.log(numberOfActiveCards);
+    // console.log(numberOfActiveCards);
     receiveNumberOfEndPage();
     return numberOfActiveCards;
   }, 100);
@@ -212,7 +212,7 @@ function receiveNumberOfEndPage(event) {
 
 function changeColorOfArrows(currentPageButtonNew) {
   if (currentPageButtonNew.textContent === "1") {
-    console.log(currentPageButtonNew.textContent === "1");
+    // console.log(currentPageButtonNew.textContent === "1");
     startLeftArrowButton.style.pointerEvents = "none";
     startLeftArrowButton.style.backgroundColor = "#f6f6f6";
     startLeftArrowButton.style.borderColor = "#cdcdcd";
@@ -252,9 +252,9 @@ function changeColorOfArrows(currentPageButtonNew) {
       rightArrowButtonInnerText.style.rotate = "0deg";
     }
   } else if (currentPageButtonNew.textContent === numberOfEndPage.toString()) {
-    console.log(
-      currentPageButtonNew.textContent === numberOfEndPage.toString()
-    );
+    // console.log(
+    //   currentPageButtonNew.textContent === numberOfEndPage.toString()
+    // );
     endRightArrowButton.style.pointerEvents = "none";
     endRightArrowButton.style.backgroundColor = "#f6f6f6";
     endRightArrowButton.style.borderColor = "#cdcdcd";
@@ -543,7 +543,7 @@ function moveSlideRight() {
 
 getRandomCardsArray();
 fillCards();
-console.log(cardsCollection);
+// console.log(cardsCollection);
 window.addEventListener("load", receiveNumberOfActiveCards);
 window.addEventListener("resize", receiveNumberOfActiveCards);
 window.addEventListener("resize", getDefaultContainer);
