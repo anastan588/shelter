@@ -30,7 +30,7 @@ function getRandomCardsArray() {
   for (let j = 0; j < pets.length; j++) {
     //   console.log(pets[j].name);
     names.push(pets[j].name);
-    //   console.log(names);
+      // console.log(names);
   }
   namesArray = names.sort(() => Math.random() - 0.5);
   // console.log(namesArray);
@@ -58,7 +58,7 @@ function getRandomCardsArray() {
   for (let i = 0; i < fourthPartOfArray.length; i++) {
     namesArray.push(fourthPartOfArray[i]);
   }
-  // console.log(namesArray);
+  console.log(namesArray);
   let katrine = 0;
   let jennnifer = 0;
   let woody = 0;
@@ -86,7 +86,7 @@ function getRandomCardsArray() {
       freddie++;
     }
   }
-  // console.log(katrine,jennnifer,woody,sohia,charly,timmy,scarlett,freddie);
+  console.log(katrine,jennnifer,woody,sohia,charly,timmy,scarlett,freddie);
   let namesArrayPart2 = [...namesArray].reverse();
   // console.log(namesArray);
   // console.log(namesArrayPart2);
@@ -98,7 +98,7 @@ function getRandomCardsArray() {
     let subArray = [];
 
     subArray = resultArray.slice(start, end);
-    // console.log(subArray);
+    console.log(subArray);
     start = start + 8;
     end = start + 8;
     randomPetsArray.push(subArray);
