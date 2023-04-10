@@ -1,4 +1,4 @@
-alert(`Уважаемые коллеги! Огромная просьба проверять ряботу в Google Chrome по причине того, что Mozilla и Opera не поддерживают import assert {type: json})`)
+alert(`Уважаемые коллеги! Огромная просьба проверять работу в Google Chrome по причине того, что Mozilla и Opera не поддерживают import assert {type: json}`)
 
 console.log(`shelter. week-3 - Добавление функционала при помощи JavaScript. Самооценка:
 1)Реализация burger menu на обеих страницах: +26
