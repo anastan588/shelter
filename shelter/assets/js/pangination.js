@@ -30,7 +30,7 @@ function getRandomCardsArray() {
   for (let j = 0; j < pets.length; j++) {
     //   console.log(pets[j].name);
     names.push(pets[j].name);
-      // console.log(names);
+    // console.log(names);
   }
   namesArray = names.sort(() => Math.random() - 0.5);
   // console.log(namesArray);
@@ -58,7 +58,7 @@ function getRandomCardsArray() {
   for (let i = 0; i < fourthPartOfArray.length; i++) {
     namesArray.push(fourthPartOfArray[i]);
   }
-  console.log(namesArray);
+  // console.log(namesArray);
   let katrine = 0;
   let jennnifer = 0;
   let woody = 0;
@@ -98,7 +98,7 @@ function getRandomCardsArray() {
     let subArray = [];
 
     subArray = resultArray.slice(start, end);
-    console.log(subArray);
+    // console.log(subArray);
     start = start + 8;
     end = start + 8;
     randomPetsArray.push(subArray);
@@ -163,7 +163,7 @@ function fillCardsOfEnd() {
 
   currentPageButtonNew = currentPageButton;
   currentPageButtonNew.textContent = 48 / numberOfActiveCards;
-  console.log(numberOfEndPage);
+  // console.log(numberOfEndPage);
   changeColorOfArrows(currentPageButtonNew);
 }
 
@@ -261,12 +261,18 @@ function changeColorOfArrows(currentPageButtonNew) {
     endRightArrowButton.style.cursor = "not-allowed";
     endRightArrowButtonInnerText.src =
       "../../assets/icons/arrowpetsblindonetwo.png";
+    if (endRightArrowButtonInnerText.style.rotate === "180deg") {
+      endRightArrowButtonInnerText.style.rotate = "0deg";
+    }
     endRightArrowButtonInnerText.style.rotate = "180deg";
     rightArrowButton.style.pointerEvents = "none";
     rightArrowButton.style.backgroundColor = "#f6f6f6";
     rightArrowButton.style.borderColor = "#cdcdcd";
     rightArrowButton.style.cursor = "not-allowed";
     rightArrowButtonInnerText.src = "../../assets/icons/arrowpetsblindone.png";
+    if (rightArrowButtonInnerText.style.rotate === "180deg") {
+      rightArrowButtonInnerText.style.rotate = "0deg";
+    }
     rightArrowButtonInnerText.style.rotate = "180deg";
     startLeftArrowButton.style.pointerEvents = "auto";
     startLeftArrowButton.style.backgroundColor = "#f6f6f6";
@@ -274,12 +280,18 @@ function changeColorOfArrows(currentPageButtonNew) {
     startLeftArrowButton.style.cursor = "pointer";
     startLeftArrowButtonInnerText.src =
       "../../assets/icons/arrowpetsdarktwo.png";
+    if (startLeftArrowButtonInnerText.style.rotate === "180deg") {
+      startLeftArrowButtonInnerText.style.rotate = "0deg";
+    }
     startLeftArrowButtonInnerText.style.rotate = "180deg";
     leftArrowButton.style.pointerEvents = "auto";
     leftArrowButton.style.backgroundColor = "#f6f6f6";
     leftArrowButton.style.borderColor = "#f1cdb3";
     leftArrowButton.style.cursor = "pointer";
     leftArrowButtonInnerText.src = "../../assets/icons/arrowpetsdarkone.png";
+    if (leftArrowButtonInnerText.style.rotate === "180deg") {
+      leftArrowButtonInnerText.style.rotate = "0deg";
+    }
     leftArrowButtonInnerText.style.rotate = "180deg";
   } else {
     startLeftArrowButton.style.pointerEvents = "auto";
@@ -288,12 +300,18 @@ function changeColorOfArrows(currentPageButtonNew) {
     startLeftArrowButton.style.cursor = "pointer";
     startLeftArrowButtonInnerText.src =
       "../../assets/icons/arrowpetsdarktwo.png";
+    if (startLeftArrowButtonInnerText.style.rotate === "180deg") {
+      startLeftArrowButtonInnerText.style.rotate = "0deg";
+    }
     startLeftArrowButtonInnerText.style.rotate = "180deg";
     leftArrowButton.style.pointerEvents = "auto";
     leftArrowButton.style.backgroundColor = "#f6f6f6";
     leftArrowButton.style.borderColor = "#f1cdb3";
     leftArrowButton.style.cursor = "pointer";
     leftArrowButtonInnerText.src = "../../assets/icons/arrowpetsdarkone.png";
+    if (leftArrowButtonInnerText.style.rotate === "180deg") {
+      leftArrowButtonInnerText.style.rotate = "0deg";
+    }
     leftArrowButtonInnerText.style.rotate = "180deg";
     endRightArrowButton.style.pointerEvents = "auto";
     endRightArrowButton.style.backgroundColor = "#f6f6f6";
