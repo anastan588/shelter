@@ -20,8 +20,6 @@
 *,
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -143,7 +141,7 @@ h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 5;
   background-color: rgba(41, 41, 41, 0.4);
 }
 
@@ -318,10 +316,6 @@ h6 {
 }
 
 /*common css*/
-.header {
-  position: relative;
-  z-index: 2;
-}
 .header .header_container {
   max-width: 1200px;
   margin: 0 auto;
@@ -364,6 +358,8 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  position: relative;
+  z-index: 2;
 }
 .header .header_container .logo .logo-title {
   font-family: "Georgia", sans-serif;
@@ -416,7 +412,7 @@ h6 {
     flex-direction: column;
     gap: 10px;
     position: relative;
-    z-index: 4;
+    z-index: 7;
   }
 }
 .header .header_container .burger .burger-item {
@@ -446,7 +442,7 @@ h6 {
     padding-top: 30vh;
     padding-left: 38px;
     padding-right: 38px;
-    z-index: 3;
+    z-index: 6;
     background-color: rgba(41, 41, 41, 0.7);
   }
 }
@@ -464,6 +460,8 @@ h6 {
 .header .header_container .menu .menu-list .menu-item {
   margin-top: -4px;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 7;
 }
 .header .header_container .menu .menu-list .menu-item:hover {
   transform: scale(1.05);
@@ -1291,7 +1289,8 @@ h6 {
 .help .help-container .help-icons_block {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 120px;
+  -moz-column-gap: 120px;
+       column-gap: 120px;
   justify-content: center;
   row-gap: 55px;
 }
