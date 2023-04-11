@@ -144,18 +144,18 @@ function countOfevent(event) {
 }
 
 function makeNewSlide(nextSlider) {
-  console.log(countOfeventNumber);
+  // console.log(countOfeventNumber);
   let cardsCollectionNew = document.querySelectorAll(".card");
   let cardsContainer = document.querySelector(".slider_container");
   let numberOfCurrentCards = cardsCollectionNew.length;
-  console.log(cardsContainer);
+  // console.log(cardsContainer);
 
   nextSlider = cardsContainer.cloneNode(true);
-  console.log(nextSlider);
-  console.log(previousContainerCardsInSave);
-  console.log(secondPreviuosCardsInSave);
+  // console.log(nextSlider);
+  // console.log(previousContainerCardsInSave);
+  // console.log(secondPreviuosCardsInSave);
   if (countOfeventNumber === 1) {
-    console.log(numberOfActiveCards);
+    // console.log(numberOfActiveCards);
     if (
       numberOfActiveCards === 2 &&
       numberOfActiveCards !== nextSlider.children.length
@@ -175,14 +175,14 @@ function makeNewSlide(nextSlider) {
       numberOfActiveCards === 2 &&
       previousContainerCardsInSave.length === 3
     ) {
-      console.log("hello1");
+      // console.log("hello1");
       previousContainerCardsInSave.pop();
     } else if (
       previousContainerCardsInSave.length > numberOfActiveCards &&
       numberOfActiveCards === 1 &&
       previousContainerCardsInSave.length === 3
     ) {
-      console.log("hello2");
+      // console.log("hello2");
       previousContainerCardsInSave.pop();
       previousContainerCardsInSave.pop();
     } else if (
@@ -190,11 +190,11 @@ function makeNewSlide(nextSlider) {
       numberOfActiveCards === 1 &&
       previousContainerCardsInSave.length === 2
     ) {
-      console.log("hello3");
+      // console.log("hello3");
       previousContainerCardsInSave.pop();
     }
     // console.log(nextSlider);
-    console.log(previousContainerCardsInSave);
+    // console.log(previousContainerCardsInSave);
     for (let i = 0; i < previousContainerCardsInSave.length; i++) {
       for (let m = 0; m < pets.length; m++) {
         if (previousContainerCardsInSave[i] === pets[m].name) {
@@ -298,18 +298,18 @@ function makeNewSlide(nextSlider) {
               }
             }
           }
-          console.log(previousNumberOfSameCards);
+          // console.log(previousNumberOfSameCards);
           
           //console.log(nextSlider);
-          console.log(countSameCards);
-          console.log(countSameCardsNumber);
+          // console.log(countSameCards);
+          // console.log(countSameCardsNumber);
           if (countSameCardsNumber > 0 && countEventsForNoRepearting === 1) {
-            console.log(j);
+            // console.log(j);
             let randomNumber = j + 1;
             if (randomNumber > randomPetsArray.length - 1) {
               randomNumber = 0;
             }
-            console.log(randomNumber);
+            // console.log(randomNumber);
             for (let m = 0; m < pets.length; m++) {
               if (randomPetsArray[randomNumber] === pets[m].name) {
                 nextSlider.children[k - 1].firstElementChild.src =
@@ -322,12 +322,12 @@ function makeNewSlide(nextSlider) {
             previousNumberOfSameCards !== 0 &&
             countEventsForNoRepearting === 1
           ) {
-            console.log(j);
+            // console.log(j);
             let randomNumber = j + 1;
             if (randomNumber > randomPetsArray.length - 1) {
               randomNumber = 0;
             }
-            console.log(randomNumber);
+            // console.log(randomNumber);
             for (let m = 0; m < pets.length; m++) {
               if (randomPetsArray[randomNumber] === pets[m].name) {
                 nextSlider.children[k - 1].firstElementChild.src =
@@ -345,7 +345,7 @@ function makeNewSlide(nextSlider) {
   // console.log(previousContainerCardsInSave);
   if (previousContainerCardsInSave !== []) {
     secondPreviuosCardsInSave = [...previousContainerCardsInSave];
-    console.log(secondPreviuosCardsInSave);
+    // console.log(secondPreviuosCardsInSave);
   }
   //console.log(nextSlider);
   //console.log(previousContainerCardsInSave);
