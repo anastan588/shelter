@@ -288,7 +288,7 @@ $mobile: 320px;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 5;
   background-color: $overlay-color;
 }
 .popup-container {
@@ -423,8 +423,8 @@ $mobile: 320px;
 /*common css*/
 
 .header {
-  position: relative;
-  z-index: 2;
+  // position: relative;
+  // z-index: 3;
   .header_container {
     @include container($container);
     box-sizing: border-box;
@@ -443,6 +443,8 @@ $mobile: 320px;
       display: flex;
       flex-direction: column;
       gap: 8px;
+      position: relative;
+      z-index: 2;
       .logo-title {
         font-family: $font_georgia;
         font-style: normal;
@@ -493,7 +495,7 @@ $mobile: 320px;
         flex-direction: column;
         gap: 10px;
         position: relative;
-        z-index: 4;
+        z-index: 7;
       }
       .burger-item {
         width: 30px;
@@ -521,7 +523,7 @@ $mobile: 320px;
         padding-top: 30vh;
         padding-left: 38px;
         padding-right: 38px;
-        z-index: 3;
+        z-index: 6;
         background-color: $burger-color;
       }
       .menu-list {
@@ -535,6 +537,8 @@ $mobile: 320px;
         .menu-item {
           margin-top: -4px;
           transition: all 0.3s ease;
+          position: relative;
+          z-index: 7;
           &:hover {
             transform: scale(1.05);
           }
@@ -1425,7 +1429,7 @@ $mobile: 320px;
 
     .block1 {
       @media screen and (max-width: 1000px) {
-        gap: 37px; 
+        gap: 37px;
       }
     }
 
