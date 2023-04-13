@@ -1,12 +1,3 @@
-alert(`Уважаемые коллеги! Огромная просьба проверять работу в Google Chrome по причине того, что Mozilla и Opera не поддерживают import assert {type: json}`)
-
-console.log(`shelter. week-3 - Добавление функционала при помощи JavaScript. Самооценка:
-1)Реализация burger menu на обеих страницах: +26
-2)Реализация слайдера-карусели на странице Main: +36
-3)Реализация пагинации на странице Pets: +36
-4)Реализация попап на обеих страницах: +12
-Итого: 110 баллов.`)
-
 let burgerImage = document.querySelector(".burger");
 let menu = document.querySelector(".menu");
 let menuList = document.querySelector(".menu-list");
